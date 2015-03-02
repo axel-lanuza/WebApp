@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIvNazq+t4kWQ6J1/zzjVFQAAAAACAAAAAAAQZgAAAAEAACAAAAA5qfGrmFGTl8S7j3qNAeTncbD6pazTjXvdyuh+nuOZTQAAAAAOgAAAAAIAACAAAAACgEwzd2ewsheDIzmoJgSAGZVxAQ6jufh4ezPy/TH50yAAAACkV/S3Hb46WN9ilZ7d0pyNMTD0rKcG++idSRXRnH4uakAAAAAH8O7CVOlGTZZ8EXlPJZfxQyG2sWlpNLdIgWBDNRGTDDq6CxGpn7ZbebvXXVOe0B7Rq1DUBKX0C3KBpVmvHBDB</EncryptedPassword>
+    <_PublishTargetUrl>ftp://qxw1099280079.my3w.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/System/System.db">
+      <publishTime>02/27/2015 12:56:00</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/27/2014 15:12:54</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.dll">
+      <publishTime>10/22/2013 08:04:34</publishTime>
+    </File>
+    <File Include="bin/TrackingWebService.dll">
+      <publishTime>03/02/2015 12:19:25</publishTime>
+    </File>
+    <File Include="bin/WebApp.dll">
+      <publishTime>03/02/2015 15:24:54</publishTime>
+    </File>
+    <File Include="css/Images/theme.jpg">
+      <publishTime>03/02/2015 12:25:56</publishTime>
+    </File>
+    <File Include="css/Main.css">
+      <publishTime>03/02/2015 14:08:38</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>03/02/2015 14:07:54</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>03/02/2015 12:16:54</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/02/2015 13:50:47</publishTime>
+    </File>
+    <File Include="SQLiteDbService.asmx">
+      <publishTime>03/02/2015 14:24:21</publishTime>
+    </File>
+    <File Include="TrackingService.asmx">
+      <publishTime>03/02/2015 12:53:56</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/02/2015 13:53:50</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

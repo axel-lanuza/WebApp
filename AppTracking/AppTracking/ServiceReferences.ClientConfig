@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="TrackingServiceSoap" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://www.brightmoon.cn/TrackingService.asmx"
+                binding="basicHttpBinding" bindingConfiguration="TrackingServiceSoap"
+                contract="TrackingService.TrackingServiceSoap" name="TrackingServiceSoap" />
+        </client>
+    </system.serviceModel>
+</configuration>

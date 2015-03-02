@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.brightmoon.cn/TrackingService.asmx?wsdl" docRef="http://www.brightmoon.cn/TrackingService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.brightmoon.cn/TrackingService.asmx" xmlns:q1="http://www.brightmoon.cn/" binding="q1:TrackingServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.brightmoon.cn/TrackingService.asmx" xmlns:q2="http://www.brightmoon.cn/" binding="q2:TrackingServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,14 @@
+﻿body {
+    background-image: url("Images/theme.jpg");
+    background-repeat: repeat-x;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    font-size: 105pt;
+    text-align: center;
+    cursor: default;
+    margin: 205px 0;
+    color: #ff0000;
+}
