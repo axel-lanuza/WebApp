@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>欢迎光临明月小站</title>
-    <link rel="stylesheet" type="text/css" href="css/Main.css" />
+    <link rel="stylesheet" type="text/css" href="Content/Main.css" />
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body>
