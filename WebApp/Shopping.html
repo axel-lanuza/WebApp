@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Shopping</title>
+    <link rel="stylesheet" type="text/css" href="Content/dinner.css" />
+    <script type="text/javascript" src="Scripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.anoslide.js"></script>
+    <link rel="stylesheet" type="text/css" href="Content/demo.css" />
+    <script type="text/javascript">
+        $(function () {
+
+        });
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="head">
+            <h1 class="logo"><a href="/Shopping.html"><img src="Content/shopping/logo.png" alt="Shopping" /></a></h1>
+            <div class="head_right">
+                <p><img src="/Content/shopping/tel.png" alt="(+86)18616897510" title="(+86)18616897510" />(+86)18616897510</p>
+                <ul class="prompt">
+                    <li><a href=".">登录</a></li>
+                    <li><a href="." target="_blank">找回密码</a></li>
+                    <li><a href="." target="_blank">疑问解答</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="carousel pagination">
+            <a class="prev" data-prev-paging></a>
+            <ul>
+                <li>
+                    <figure><img data-src="anoslide/images/slides/1.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+                </li>
+                <li>
+                    <figure><img data-src="anoslide/images/slides/2.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+                </li>
+                <li>
+                    <figure><img data-src="anoslide/images/slides/3.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+                </li>
+                <li>
+                    <figure><img data-src="anoslide/images/slides/4.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+                </li>
+                <li>
+                    <figure><img data-src="anoslide/images/slides/5.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+                </li>
+                <li>
+                    <figure><img data-src="anoslide/images/slides/6.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+                </li>
+                <li>
+                    <figure><img data-src="anoslide/images/slides/7.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+                </li>
+            </ul>
+            <a class="next" data-next-paging></a>
+            <a class="badge"></a>
+        </div>
+
+        <script type="text/javascript">
+            $('.carousel.pagination ul').anoSlide(
+            {
+                items: 1,
+                speed: 500,
+                prev: 'a.prev[data-prev-paging]',
+                next: 'a.next[data-next-paging]',
+                lazy: true,
+                onConstruct: function (instance) {
+                    var paging = $('<div/>').addClass('paging fix').css(
+                    {
+                        position: 'absolute',
+                        top: 1,
+                        left: 50 + '%',
+                        width: instance.slides.length * 40,
+                        marginLeft: -(instance.slides.length * 40) / 2
+                    })
+
+                    /* Build paging */
+                    for (i = 0, l = instance.slides.length; i < l; i++) {
+                        var a = $('<a/>').data('index', i).appendTo(paging).on(
+                        {
+                            click: function () {
+                                instance.stop().go($(this).data('index'));
+                            }
+                        });
+
+                        if (i == instance.current) {
+                            a.addClass('current');
+                        }
+                    }
+                    instance.element.parent().append(paging);
+                },
+                onStart: function (ui) {
+                    var paging = $('.paging');
+                    paging.find('a').eq(ui.instance.current).addClass('current').siblings().removeClass('current');
+                }
+            })
+        </script>
+    </div>
+</body>
+</html>

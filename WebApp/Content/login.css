@@ -1,0 +1,51 @@
+﻿body {
+    background-image: url("Images/loginbg.jpg");
+    background-repeat: repeat-x;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+}
+
+#mainpanel {
+    margin: 13% auto;
+    padding: 8px 20px;
+    width: 340px;
+    height: 200px;
+    border: 1px #95B8E7 solid;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(#fff, lightblue); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#fff, lightblue); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#fff, lightblue); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#fff, lightblue); /* 标准的语法（必须放在最后） */
+    box-shadow: 10px 10px 5px #888888;
+}
+
+    #mainpanel #title {
+        font-size: 25pt;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    #mainpanel #form .input {
+        padding: 6px 8px;
+        width: 182px;
+        height: 14px;
+    }
+
+    #mainpanel #footer {
+        font-size: 10pt;
+        text-align: center;
+    }
+
+button {
+    padding: 6px 8px;
+    width: 200px;
+    height: 30px;
+}
+
+#copyright {
+    font-size: 11pt;
+    text-align: center;
+}

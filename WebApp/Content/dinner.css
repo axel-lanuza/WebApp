@@ -1,0 +1,69 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: -moz-scrollbars-vertical;
+    font-size: 12px;
+    word-break: break-all;
+    width: 100%;
+    color: #666;
+}
+
+#header {
+    width: 100%;
+    /*height: 20%;*/
+    margin-bottom: 0px;
+    background: url("dinner/header_bg.jpg") #F8F8F8 repeat-x left bottom;
+}
+
+.head {
+    width: 980px;
+    height: 98px;
+    margin: 0 auto;
+}
+
+    .head .logo {
+        width: 157px;
+        padding-top: 16px;
+        padding-left: 10px;
+        float: left;
+    }
+
+    .head .head_right {
+        width: 410px;
+        height: 98px;
+        float: right;
+    }
+
+        .head .head_right p {
+            padding-top: 27px;
+            text-align: right;
+            height: 39px;
+        }
+
+        .head .head_right .prompt {
+            float: right;
+        }
+
+            .head .head_right .prompt li {
+                float: left;
+                line-height: 14px;
+                margin-left: 1px;
+            }
+
+                .head .head_right .prompt li a {
+                    color: #666;
+                    display: inline-block;
+                    font-size: 12px;
+                    text-decoration: none;
+                    margin: 0 17px 0 6px;
+                }
+
+.content {
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    background: url("dinner/header_bg.jpg") #F8F8F8 repeat-x left bottom;
+}

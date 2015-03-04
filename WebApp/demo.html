@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>anoslide demo</title>
+    <script type="text/javascript" src="Scripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.anoslide.js"></script>
+    <link rel="stylesheet" type="text/css" href="Content/demo.css" />
+</head>
+<body>
+    <h2>1. Mixed content demo (One visible item)<em>Resize your browser to review responsive effect</em></h2>
+    <div class="carousel">
+        <a class="prev" data-prev-mixed></a>
+        <ul>
+            <li>
+                <figure><img data-src="anoslide/images/slides/1.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/2.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/3.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/4.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/5.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/6.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/7.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+        </ul>
+        <a class="next" data-next-mixed></a>
+        <a class="badge"></a>
+    </div>
+    <script type="text/javascript">
+        $('.carousel ul').anoSlide(
+        {
+            items: 1,
+            speed: 500,
+            prev: 'a.prev[data-prev-mixed]',
+            next: 'a.next[data-next-mixed]',
+            lazy: true
+        })
+    </script>
+    <h2>2. Multiple items<em>Resize your browser to review responsive effect</em></h2>
+    <div class="carousel" data-mixed>
+        <a class="prev" data-prev></a>
+        <ul>
+            <li>
+                <div class="wrap"><figure><img data-src="anoslide/images/slides/thumbnails/1.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw = ="" /></figure></div>
+            </li>
+            <li>
+                <div class="wrap"><figure><img data-src="anoslide/images/slides/thumbnails/2.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+            </li>
+            <li>
+                <div class="wrap"><figure><img data-src="anoslide/images/slides/thumbnails/3.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+            </li>
+            <li>
+                <div class="wrap"><figure><img data-src="anoslide/images/slides/thumbnails/4.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+            </li>
+            <li>
+                <div class="wrap"><figure><img data-src="anoslide/images/slides/thumbnails/5.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+            </li>
+            <li>
+                <div class="wrap"><figure><img data-src="anoslide/images/slides/thumbnails/6.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+            </li>
+            <li>
+                <div class="wrap"><figure><img data-src="anoslide/images/slides/thumbnails/7.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure></div>
+            </li>
+        </ul>
+        <a class="next" data-next></a>
+        <a class="badge"></a>
+    </div>
+
+    <script type="text/javascript">
+        $('.carousel[data-mixed] ul').anoSlide(
+        {
+            items: 5,
+            speed: 500,
+            prev: 'a.prev[data-prev]',
+            next: 'a.next[data-next]',
+            lazy: true,
+            delay: 100
+        })
+    </script>
+
+    <h2>3. Paging<em>Anoslide is designed to provide suitable hooks in the form of callback functions allowing you to easily extend the plugin without updating it's core.</em></h2>
+    <div class="carousel pagination">
+        <a class="prev" data-prev-paging></a>
+        <ul>
+            <li>
+                <figure><img data-src="anoslide/images/slides/1.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/2.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/3.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/4.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/5.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/6.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+            <li>
+                <figure><img data-src="anoslide/images/slides/7.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /></figure>
+            </li>
+        </ul>
+        <a class="next" data-next-paging></a>
+        <a class="badge"></a>
+    </div>
+
+    <script type="text/javascript">
+        $('.carousel.pagination ul').anoSlide(
+        {
+            items: 1,
+            speed: 500,
+            prev: 'a.prev[data-prev-paging]',
+            next: 'a.next[data-next-paging]',
+            lazy: true,
+            onConstruct: function (instance) {
+                var paging = $('<div/>').addClass('paging fix').css(
+                {
+                    position: 'absolute',
+                    top: 1,
+                    left: 50 + '%',
+                    width: instance.slides.length * 40,
+                    marginLeft: -(instance.slides.length * 40) / 2
+                })
+
+                /* Build paging */
+                for (i = 0, l = instance.slides.length; i < l; i++) {
+                    var a = $('<a/>').data('index', i).appendTo(paging).on(
+                    {
+                        click: function () {
+                            instance.stop().go($(this).data('index'));
+                        }
+                    });
+
+                    if (i == instance.current) {
+                        a.addClass('current');
+                    }
+                }
+                instance.element.parent().append(paging);
+            },
+            onStart: function (ui) {
+                var paging = $('.paging');
+                paging.find('a').eq(ui.instance.current).addClass('current').siblings().removeClass('current');
+            }
+        })
+    </script>
+</body>
+</html>
