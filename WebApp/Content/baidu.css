@@ -1,0 +1,17 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 12px;
+}
+
+#map {
+    float: left;
+}
+
+#panel {
+    float: right;
+    background-color: #efe5e5;
+}

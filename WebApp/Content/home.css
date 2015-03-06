@@ -1,0 +1,140 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    font-size: 12px;
+    background-repeat: repeat-x;
+    background-size: cover;
+}
+
+.home {
+    background-image: url("/Content/home/0.jpg");
+}
+
+#panel {
+    margin: 13% auto;
+    padding: 8px 20px;
+    width: 400px;
+    height: 240px;
+    border: 1px #95B8E7 solid;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(#fff, lightblue); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#fff, lightblue); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#fff, lightblue); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#fff, lightblue); /* 标准的语法（必须放在最后） */
+    box-shadow: 10px 10px 5px #888888;
+    filter: alpha(opacity:30);
+    opacity: 0.7;
+}
+
+#titlepanel {
+    font-weight: 700;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 24px;
+    cursor: default;
+    color: #000;
+    padding-top: 10px;
+}
+
+    #titlepanel span {
+        font-weight: 100;
+        font-size: 11pt;
+    }
+
+#main {
+    height: 140px;
+    line-height: 16px;
+    border-top: 1px dashed #888;
+    border-bottom: 1px dashed #888;
+}
+
+.infopanel {
+    height: 20px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 1px #95B8E7 solid;
+    border-radius: 20px;
+}
+
+.info-font {
+    font-size: 20pt;
+}
+
+.panelenter {
+    background-color: lightblue;
+}
+
+#footerpanel {
+    margin: 5px;
+    text-align: center;
+}
+
+/*about.html*/
+.about {
+    background-color: #F5F5D5;
+}
+
+    .about .mainpanel {
+        height: 500px;
+        margin-left: 180px;
+        margin-right: 180px;
+        border: 1px #95B8E7 solid;
+        border-radius: 10px;
+        background: -webkit-linear-gradient(#fff, lightgreen); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(#fff, lightgreen); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(#fff, lightgreen); /* Firefox 3.6 - 15 */
+        background: linear-gradient(#fff, lightgreen); /* 标准的语法（必须放在最后） */
+        box-shadow: 10px 10px 5px #888888;
+        /*filter: alpha(opacity:30);
+        opacity: 0.7;*/
+    }
+
+        .about .mainpanel h1 {
+            margin: 10px;
+            border-bottom: 1px #95B8E7 solid;
+        }
+
+        .about .mainpanel .text {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .about .mainpanel .paragraph {
+            font-size: 18px;
+            text-indent: 50px;
+            word-wrap: break-word;
+        }
+
+        .about .mainpanel .info {
+            font-size: 18px;
+            word-wrap: break-word;
+        }
+
+        .about .mainpanel .myphoto {
+            height: 270px;
+            width: 800px;
+            margin-left: 100px;
+            opacity: 1;
+        }
+
+        .about .mainpanel img {
+            height: 270px;
+            background-size: contain;
+        }
+
+.header {
+    height: 70px;
+}
+
+    .header .left {
+        width: 300px;
+        margin-top: 40px;
+        margin-left: 200px;
+        font: 20px arial,sans-serif;
+    }
