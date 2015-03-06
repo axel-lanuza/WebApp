@@ -1,8 +1,8 @@
 ﻿* {
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    /*overflow-x: hidden;*/
+    /*overflow-y: hidden;*/
 }
 
 body {
@@ -16,7 +16,17 @@ body {
 }
 
 #panel {
-    margin: 13% auto;
+    margin-left: 32%;
+    margin-top: 15%;
+    padding: 8px 20px;
+    width: 400px;
+    height: 240px;
+    position: absolute;
+}
+
+.home .shadow {
+    margin-left: 32%;
+    margin-top: 15%;
     padding: 8px 20px;
     width: 400px;
     height: 240px;
@@ -28,7 +38,8 @@ body {
     background: linear-gradient(#fff, lightblue); /* 标准的语法（必须放在最后） */
     box-shadow: 10px 10px 5px #888888;
     filter: alpha(opacity:30);
-    opacity: 0.7;
+    opacity: 0.4;
+    position: absolute;
 }
 
 #titlepanel {
@@ -54,7 +65,7 @@ body {
 }
 
 .infopanel {
-    height: 20px;
+    height: 14px;
     margin: 10px;
     padding: 15px;
     text-align: center;
@@ -67,7 +78,10 @@ body {
 }
 
 .panelenter {
-    background-color: lightblue;
+    background: -webkit-linear-gradient(#fff, lightblue); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#fff, lightblue); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#fff, lightblue); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#fff, lightblue); /* 标准的语法（必须放在最后） */
 }
 
 #footerpanel {
@@ -80,8 +94,9 @@ body {
     background-color: #F5F5D5;
 }
 
-    .about .mainpanel {
-        height: 500px;
+    .about .shadow {
+        height: 75%;
+        width: 75%;
         margin-left: 180px;
         margin-right: 180px;
         border: 1px #95B8E7 solid;
@@ -91,8 +106,19 @@ body {
         background: -moz-linear-gradient(#fff, lightgreen); /* Firefox 3.6 - 15 */
         background: linear-gradient(#fff, lightgreen); /* 标准的语法（必须放在最后） */
         box-shadow: 10px 10px 5px #888888;
-        /*filter: alpha(opacity:30);
-        opacity: 0.7;*/
+        filter: alpha(opacity:30);
+        opacity: 0.4;
+        position: absolute;
+    }
+
+    .about .mainpanel {
+        height: 75%;
+        width: 75%;
+        margin-left: 180px;
+        margin-right: 180px;
+        border: 1px #95B8E7 solid;
+        border-radius: 10px;
+        position: absolute;
     }
 
         .about .mainpanel h1 {
@@ -117,19 +143,19 @@ body {
         }
 
         .about .mainpanel .myphoto {
-            height: 270px;
-            width: 800px;
-            margin-left: 100px;
-            opacity: 1;
+            height: 30%;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
         }
 
         .about .mainpanel img {
-            height: 270px;
+            height: 30%;
             background-size: contain;
         }
 
 .header {
-    height: 70px;
+    height: 40px;
 }
 
     .header .left {
