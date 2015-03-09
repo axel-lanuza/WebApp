@@ -10,6 +10,6 @@
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body>
-    <div class="content">你好，呆货！</div>
+    <div class="content">欢迎光临明月小站！</div>
 </body>
 </html>

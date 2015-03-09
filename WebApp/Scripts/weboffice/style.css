@@ -1,0 +1,268 @@
+.maintitle {
+    font-size: 13px;
+    color: #000000;
+}
+
+.maintxt {
+    font-size: 12px;
+}
+
+    .maintxt a:visited {
+        font-size: 12px;
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .maintxt a:hover {
+        font-size: 12px;
+        color: #ff0000;
+        text-decoration: none;
+    }
+
+    .maintxt a:link {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .maintxt a:active {
+        color: #000000;
+        text-decoration: none;
+    }
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.btn {
+    border-right: #0066cc 1px solid;
+    border-top: #3366ff 1px solid;
+    font-size: 12px;
+    padding-bottom: 3px;
+    margin: 1px 0px 2px 3px;
+    border-left: #0066cc 1px solid;
+    width: 128px;
+    color: #ffffff;
+    padding-top: 3px;
+    border-bottom: #3366ff 1px solid;
+    font-style: normal;
+    height: 24px;
+    background-color: #638eef;
+}
+
+.style2 {
+    font-size: 12px;
+    color: #ff0000;
+    font-family: "ËÎÌו", arial, sans-serif;
+}
+
+.style3 {
+    font-size: 12px;
+    font-family: "ËÎÌו", arial, sans-serif;
+}
+
+.redlink {
+    color: #ff0000;
+}
+
+.topside {
+    border-top: #3366cc 1px solid;
+    border-left-width: 1px;
+    border-left-color: #3366cc;
+    border-bottom-width: 1px;
+    border-bottom-color: #3366cc;
+    border-right-width: 1px;
+    border-right-color: #3366cc;
+}
+
+.leftborder {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left: #0066ff 1px dashed;
+    border-right-width: 1px;
+}
+
+.downside {
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-bottom: #0066ff 1px dashed;
+    border-right-width: 1px;
+}
+
+.menuitem {
+    border-top-width: 1px;
+    padding-right: 0px;
+    padding-left: 12px;
+    border-left-width: 1px;
+    border-left-color: #0000cc;
+    border-bottom-width: 1px;
+    border-bottom-color: #0000cc;
+    padding-bottom: 0px;
+    margin: 1px 0px 0px;
+    cursor: pointer;
+    color: #000066;
+    border-top-color: #0000cc;
+    padding-top: 1px;
+    height: 18px;
+    background-color: #e5ecf9;
+    border-right-width: 1px;
+    border-right-color: #0000cc;
+}
+
+.tableblock {
+    border-right: #a55257 1px solid;
+    border-top: #a55257 1px solid;
+    font-size: 9pt;
+    border-left: #a55257 1px solid;
+    line-height: 20px;
+    border-bottom: #a55257 1px solid;
+    border-collapse: collapse;
+}
+
+    .tableblock td {
+        padding-right: 3px;
+        padding-left: 3px;
+        padding-bottom: 3px;
+        color: #000000;
+        padding-top: 3px;
+    }
+
+    .tableblock .tableheader td {
+        border-right: #a55257 1px solid;
+        padding-right: 0px;
+        border-top: #a55257 1px solid;
+        padding-left: 0px;
+        font-weight: bold;
+        background: #e5ecf9;
+        padding-bottom: 0px;
+        border-left: #a55257 1px solid;
+        color: #000;
+        line-height: 23px;
+        padding-top: 0px;
+        border-bottom: #a55257 1px solid;
+    }
+
+    .tableblock td.tableheader {
+        border-right: #a55257 1px solid;
+        padding-right: 0px;
+        border-top: #a55257 1px solid;
+        padding-left: 0px;
+        font-weight: bold;
+        background: #e5ecf9;
+        padding-bottom: 0px;
+        border-left: #a55257 1px solid;
+        color: #000;
+        line-height: 23px;
+        padding-top: 0px;
+        border-bottom: #a55257 1px solid;
+    }
+
+    .tableblock .tableline1 td {
+        border-right: #a55257 1px solid;
+        border-top: #a55257 1px solid;
+        background: #f8f8f8;
+    }
+
+    .tableblock td.tableline1 {
+        border-right: #a55257 1px solid;
+        border-top: #a55257 1px solid;
+        background: #f8f8f8;
+    }
+
+    .tableblock .tableline2 td {
+        border-right: #a55257 1px solid;
+        border-top: #a55257 1px solid;
+        background: #ffffff;
+    }
+
+    .tableblock td.tableline2 {
+        border-right: #a55257 1px solid;
+        border-top: #a55257 1px solid;
+        background: #ffffff;
+    }
+
+    .tableblock .tabledata td {
+        border-right: #a55257 1px solid;
+        border-top: #a55257 1px solid;
+        background: #ffffff;
+    }
+
+    .tableblock td.tabledata {
+        border-right: #a55257 1px solid;
+        border-top: #a55257 1px solid;
+        background: #ffffff;
+    }
+
+    .tableblock td.lefttabledata {
+        border-right: #a55257 1px solid;
+        border-top: #a55257 1px solid;
+        background: #6699ff;
+    }
+
+    .tableblock .tablecontent td {
+        border-right: #a55257 1px solid;
+        border-top: #a55257 1px solid;
+        background: #f0f0f0;
+    }
+
+    .tableblock td.tablecontent {
+        border-right: #a55257 1px solid;
+        border-top: #a55257 1px solid;
+        background: #f0f0f0;
+    }
+
+    .tableblock .tablefooter td {
+        border-right: #cfddea 1px solid;
+        border-top: #cfddea 1px solid;
+        background: #fff;
+        border-left: #cfddea 1px solid;
+        border-bottom: #cfddea 1px solid;
+    }
+
+    .tableblock .tablecontrol td {
+        border-right: #cfddea 1px solid;
+        border-top: #cfddea 1px solid;
+        background: #fff;
+        border-left: #cfddea 1px solid;
+        border-bottom: #cfddea 1px solid;
+    }
+
+    .tableblock td.tablefooter {
+        border-right: #cfddea 1px solid;
+        border-top: #cfddea 1px solid;
+        background: #fff;
+        border-left: #cfddea 1px solid;
+        border-bottom: #cfddea 1px solid;
+    }
+
+    .tableblock td.tablecontrol {
+        border-right: #cfddea 1px solid;
+        border-top: #cfddea 1px solid;
+        background: #fff;
+        border-left: #cfddea 1px solid;
+        border-bottom: #cfddea 1px solid;
+    }
+
+    .tableblock .tablered td {
+        background: #ffebeb;
+    }
+
+    .tableblock td.tablered {
+        background: #ffebeb;
+    }
+
+body {
+    font-size: 12px;
+    font-family: arial, ËÎÌו, serif;
+}
