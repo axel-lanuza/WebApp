@@ -11,7 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="about.html">
-      <publishTime>03/09/2015 18:12:10</publishTime>
+      <publishTime>03/12/2015 16:50:28</publishTime>
     </File>
     <File Include="anoslide/demo.html">
       <publishTime>03/03/2015 13:34:30</publishTime>
@@ -80,7 +80,7 @@
       <publishTime>02/27/2015 12:56:00</publishTime>
     </File>
     <File Include="baidumap.html">
-      <publishTime>03/06/2015 09:55:00</publishTime>
+      <publishTime>03/12/2015 16:51:09</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>04/27/2014 15:12:54</publishTime>
@@ -92,7 +92,7 @@
       <publishTime>03/02/2015 12:19:25</publishTime>
     </File>
     <File Include="bin/WebApp.dll">
-      <publishTime>03/12/2015 15:00:58</publishTime>
+      <publishTime>03/12/2015 16:59:26</publishTime>
     </File>
     <File Include="Content/baidu.css">
       <publishTime>03/05/2015 15:40:04</publishTime>
@@ -2530,11 +2530,17 @@
     <File Include="Content/Office.css">
       <publishTime>03/09/2015 11:34:39</publishTime>
     </File>
+    <File Include="Content/plugin.css">
+      <publishTime>03/12/2015 16:59:04</publishTime>
+    </File>
+    <File Include="Content/plugin/back.png">
+      <publishTime>03/12/2015 16:47:42</publishTime>
+    </File>
     <File Include="Content/resume/background.png">
       <publishTime>03/12/2015 13:07:25</publishTime>
     </File>
     <File Include="Content/resume/template.css">
-      <publishTime>03/12/2015 15:42:22</publishTime>
+      <publishTime>03/12/2015 16:10:53</publishTime>
     </File>
     <File Include="Content/shopping/dinner.jpg">
       <publishTime>03/02/2015 20:36:03</publishTime>
@@ -2726,7 +2732,7 @@
       <publishTime>03/02/2015 16:38:11</publishTime>
     </File>
     <File Include="demo.html">
-      <publishTime>03/06/2015 10:00:14</publishTime>
+      <publishTime>03/12/2015 16:51:22</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>03/04/2015 17:56:39</publishTime>
@@ -2840,7 +2846,7 @@
       <publishTime>03/04/2015 16:38:09</publishTime>
     </File>
     <File Include="modern.html">
-      <publishTime>03/06/2015 09:56:12</publishTime>
+      <publishTime>03/12/2015 16:51:45</publishTime>
     </File>
     <File Include="modernslide/css/sequencejs-theme.modern-slide-in.css">
       <publishTime>03/04/2015 17:01:23</publishTime>
@@ -2900,7 +2906,7 @@
       <publishTime>03/09/2015 17:33:06</publishTime>
     </File>
     <File Include="resume.html">
-      <publishTime>03/12/2015 12:50:57</publishTime>
+      <publishTime>03/12/2015 16:41:02</publishTime>
     </File>
     <File Include="Scripts/anoslide/demo.html">
       <publishTime>03/03/2015 13:34:30</publishTime>
@@ -3835,8 +3841,11 @@
     <File Include="Scripts/office/MicrosoftAjax.js">
       <publishTime>03/09/2015 12:59:31</publishTime>
     </File>
+    <File Include="Scripts/plugin.js">
+      <publishTime>03/12/2015 16:49:21</publishTime>
+    </File>
     <File Include="Scripts/resume/resume.js">
-      <publishTime>03/12/2015 13:35:43</publishTime>
+      <publishTime>03/12/2015 16:36:30</publishTime>
     </File>
     <File Include="Scripts/weboffice/main.js">
       <publishTime>03/09/2015 15:11:40</publishTime>
@@ -3854,10 +3863,10 @@
       <publishTime>03/09/2015 14:33:05</publishTime>
     </File>
     <File Include="Shopping.html">
-      <publishTime>03/06/2015 09:57:50</publishTime>
+      <publishTime>03/12/2015 16:51:55</publishTime>
     </File>
     <File Include="slider.html">
-      <publishTime>03/06/2015 09:57:28</publishTime>
+      <publishTime>03/12/2015 16:52:03</publishTime>
     </File>
     <File Include="SQLiteDbService.asmx">
       <publishTime>03/02/2015 14:24:21</publishTime>

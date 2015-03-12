@@ -1,0 +1,8 @@
+﻿.back {
+    background-image: url('plugin/back.png');
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    position: absolute;
+    cursor: pointer;
+}

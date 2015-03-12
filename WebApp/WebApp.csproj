@@ -113,8 +113,11 @@
     <Content Include="Content\home\my\8.png" />
     <Content Include="Content\home\my\9.png" />
     <Content Include="Content\Office.css" />
+    <Content Include="Content\plugin.css" />
+    <Content Include="Content\plugin\back.png" />
     <Content Include="Content\resume\background.png" />
     <Content Include="Content\resume\template.css" />
+    <Content Include="Scripts\plugin.js" />
     <Content Include="Scripts\resume\resume.js" />
     <Content Include="Scripts\weboffice\office.html" />
     <Content Include="Scripts\anoslide\demo.html" />
