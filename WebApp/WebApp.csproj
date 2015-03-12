@@ -117,6 +117,7 @@
     <Content Include="Content\plugin\back.png" />
     <Content Include="Content\resume\background.png" />
     <Content Include="Content\resume\template.css" />
+    <Content Include="Scripts\default.js" />
     <Content Include="Scripts\plugin.js" />
     <Content Include="Scripts\resume\resume.js" />
     <Content Include="Scripts\weboffice\office.html" />
