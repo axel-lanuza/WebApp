@@ -1,0 +1,136 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    font-size: 12px;
+    background-image: url('background.png');
+    background-size: contain;
+}
+
+.border-right {
+    border-right: 1px dashed #888;
+}
+
+.template {
+    /*margin-top: 20px;*/
+    margin-left: 300px;
+    width: 800px;
+    background-color: lightblue;
+    overflow-y: visible;
+}
+
+    .template .totaltitle {
+        height: 40px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 30px;
+        /*background-color: blue;*/
+        border-bottom: 2px dashed #888;
+        padding-top: 10px;
+    }
+
+    .template .title {
+        height: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 1px dashed #888;
+        padding-top: 2px;
+        padding-left: 10px;
+    }
+
+    .template .basicinfo {
+        height: 200px;
+        /*background-color: red;*/
+        border-bottom: 2px dashed #888;
+    }
+
+        .template .basicinfo .list {
+            width: 600px;
+            height: 179px;
+            /*background-color: red;*/
+            float: left;
+            border-right: 1px dashed #888;
+        }
+
+            .template .basicinfo .list .tr {
+                width: 600px;
+                height: 20px;
+                font-size: 16px;
+                text-align: center;
+                /*background-color: red;*/
+                border-bottom: 1px dashed #888;
+            }
+
+                .template .basicinfo .list .tr .td-name {
+                    width: 100px;
+                    height: 20px;
+                    float: left;
+                    /*font-weight: bold;*/
+                    /*font-size: 18px;
+                    text-align: center;*/
+                    background-color: red;
+                    border-right: 1px dashed #888;
+                    padding: 2px;
+                }
+
+                .template .basicinfo .list .tr .td-val {
+                    width: 198px;
+                    height: 20px;
+                    /*background-color: red;*/
+                    float: left;
+                    padding: 2px;
+                }
+
+                .template .basicinfo .list .tr .td-val2 {
+                    width: 498px;
+                    height: 20px;
+                    /*background-color: red;*/
+                    float: left;
+                }
+
+        .template .basicinfo .image {
+            height: 179px;
+            width: 180px;
+            float: left;
+            background-size: contain;
+            background-color: blue;
+            text-align: center;
+        }
+
+    .template .expertise {
+        height: 200px;
+        /*background-color: red;*/
+        border-bottom: 2px dashed #888;
+    }
+
+    .template .history {
+        height: 200px;
+        /*background-color: red;*/
+        border-bottom: 2px dashed #888;
+    }
+
+    .template .evaluation {
+        height: 200px;
+        /*background-color: red;*/
+        border-bottom: 2px dashed #888;
+    }
+
+    .template .projects {
+        height: 200px;
+        /*background-color: red;*/
+    }
+
+    .template .left {
+        width: 100px;
+        background-color: green;
+        height: 200px;
+        text-align: center;
+        border-right: 1px dashed #888;
+        padding-top: 70px;
+        font-size: 16px;
+        font-weight: bold;
+    }

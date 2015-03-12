@@ -113,6 +113,9 @@
     <Content Include="Content\home\my\8.png" />
     <Content Include="Content\home\my\9.png" />
     <Content Include="Content\Office.css" />
+    <Content Include="Content\resume\background.png" />
+    <Content Include="Content\resume\template.css" />
+    <Content Include="Scripts\resume\resume.js" />
     <Content Include="Scripts\weboffice\office.html" />
     <Content Include="Scripts\anoslide\demo.html" />
     <Content Include="Scripts\anoslide\images\badge.png" />
@@ -1139,6 +1142,8 @@
     <Content Include="Scripts\weboffice\office.js" />
     <Content Include="Scripts\weboffice\style.css" />
     <Content Include="Scripts\weboffice\WebOffice.cab" />
+    <Content Include="View\resume\template.html" />
+    <Content Include="resume.html" />
     <None Include="Scripts\office\1.1\office-vsdoc.js" />
     <Content Include="Scripts\office\1.1\office.debug.js" />
     <Content Include="Scripts\office\1.1\office.js" />

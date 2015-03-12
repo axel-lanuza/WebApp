@@ -84,7 +84,7 @@ body {
     background: linear-gradient(#fff, lightblue); /* 标准的语法（必须放在最后） */
 }
 
-#footerpanel {
+.footerpanel {
     margin: 5px;
     text-align: center;
 }
