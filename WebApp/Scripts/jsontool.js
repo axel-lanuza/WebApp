@@ -27,7 +27,7 @@
         }
         try {
             right.objtree('set', t);
-            right.objtree('toggleAll');
+            //right.objtree('toggleAll');
         } catch (e) {
             alert(e);
             return;

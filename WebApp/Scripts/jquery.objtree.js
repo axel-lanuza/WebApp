@@ -115,7 +115,7 @@
 		css += '.len{float:left;color:#6f6b6b;}';
 		css += '.mark{float:left;color:#6f6b6b;width:8px;text-align:center;cursor:pointer;}';
 		css += '.contain{}';
-		css += '.btn{position:relative;cursor:pointer;top:2px;text-align:center;width:50px;height:20px;}';
+		css += '.btn{position:relative;cursor:pointer;top:2px;text-align:center;width:50px;height:23px;}';
 		css += '</style>';
 		return css;
 	}
