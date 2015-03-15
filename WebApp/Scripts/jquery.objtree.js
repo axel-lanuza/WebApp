@@ -29,8 +29,14 @@
 
 	function _bindingString(target, options, level, name, obj) {
 		var id = generalId(target[0].id, name, level);
+		var val;
+		if (obj != undefined)
+			val = '"' + obj + '"';
+		else
+			val = obj;
+
 		var sl = '<div id="' + id + '" style="' + generalMargin(level) + '"><div class="name">' + name + ':</div>';
-		sl += '<div class="val-str">' + (obj.length == 0 ? null : obj) + '</div></div>';
+		sl += '<div class="val-str">' + val + '</div></div>';
 		$(sl).appendTo(target);
 	}
 
@@ -88,9 +94,9 @@
 	}
 
 	function bindingData(pre, options, level, name, obj) {
-		if (obj == undefined)
-			return;
-		if (obj.constructor === Boolean) {
+		if (obj == undefined) {
+			_bindingString(pre, options, level, name, obj);
+		} else if (obj.constructor === Boolean) {
 			_bindingBoolean(pre, options, level, name, obj);
 		} else if (obj.constructor === Number) {
 			_bindingNumber(pre, options, level, name, obj);
