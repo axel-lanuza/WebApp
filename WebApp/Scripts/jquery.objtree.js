@@ -34,10 +34,21 @@
 		$(sl).appendTo(target);
 	}
 
-	function toggle(panel, mark) {
-		var _mark = $(mark).html();
-		_mark === '-' ? $(mark).html('+') : $(mark).html('-');
-		$(panel).fadeToggle('fast');
+	function toggle(panel, marknode, mark) {
+		var _mark;
+		if (mark === undefined)
+			_mark = $(marknode).html();
+		else
+			_mark = mark;
+		if (_mark === '-') {
+			$(marknode).html('+');
+			$(panel).fadeOut('fast');
+		}
+		else {
+			$(marknode).html('-');
+			$(panel).fadeIn('fast');
+		}
+		//$(panel).fadeToggle('fast');
 	}
 
 	function _bindingArray(target, options, level, name, obj) {
@@ -111,10 +122,17 @@
 
 	function toggleTree(tree) {
 		var parent = $('.contain:first', tree);
+		var state = $(tree).data('objtree');
 		var children = parent.children('*');
+		if (state.options.mark === undefined)
+			state.options.mark = '-';
 		$.each(children, function (i, child) {
-			toggleNode(child);
+			toggleNode(child, state.options.mark);
 		});
+		if (state.options.mark === '-')
+			state.options.mark = '+';
+		else
+			state.options.mark = '-';
 	}
 
 	function find(nodes, className) {
@@ -125,13 +143,13 @@
 		return undefined;
 	}
 
-	function toggleNode(node) {
+	function toggleNode(node, mark) {
 		try {
 			$.each(node.childNodes, function (i, childnode) {
 				if (childnode.className === 'contain') {
-					var mark = find(node.childNodes, 'mark');
-					if (mark)
-						toggle(childnode, mark);
+					var marknode = find(node.childNodes, 'mark');
+					if (marknode)
+						toggle(childnode, marknode, mark);
 				}
 			});
 		} catch (e) {
@@ -205,7 +223,7 @@
 		clear: function (jq) {
 			clearObjs(jq[0]);
 		},
-		toggle: function (jq) {
+		toggleAll: function (jq) {
 			toggleTree(jq[0]);
 		}
 	};

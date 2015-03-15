@@ -118,12 +118,12 @@
     <Content Include="Content\resume\background.png" />
     <Content Include="Content\resume\template.css" />
     <Content Include="Content\resume\zq.jpg" />
-    <Content Include="Content\test.css" />
+    <Content Include="Content\jsontool.css" />
     <Content Include="Scripts\baidu\location.js" />
     <Content Include="Scripts\default.js" />
     <Content Include="Scripts\plugin.js" />
     <Content Include="Scripts\resume\resume.js" />
-    <Content Include="Scripts\test.js" />
+    <Content Include="Scripts\jsontool.js" />
     <Content Include="Scripts\weboffice\office.html" />
     <Content Include="Scripts\anoslide\images\badge.png" />
     <Content Include="Scripts\anoslide\images\dots.png" />
@@ -1149,7 +1149,7 @@
     <Content Include="Scripts\weboffice\office.js" />
     <Content Include="Scripts\weboffice\style.css" />
     <Content Include="Scripts\weboffice\WebOffice.cab" />
-    <Content Include="test.html" />
+    <Content Include="json.html" />
     <Content Include="View\resume\template.html" />
     <Content Include="resume.html" />
     <Content Include="Scripts\jquery.objtree.js" />
