@@ -7,11 +7,24 @@ body {
     font-size: 12px;
 }
 
+.top {
+    height: 60px;
+    background-color: lightblue;
+}
+
 #map {
     float: left;
 }
 
-#panel {
-    float: right;
-    background-color: #efe5e5;
+.panel {
+    float: left;
+    background-color: #ffffff;
+}
+
+.title {
+    padding: 2px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e2d9d9;
 }

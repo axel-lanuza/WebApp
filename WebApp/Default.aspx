@@ -10,6 +10,9 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="Scripts/default.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nbN4XhiWzpCkC1IakFERAuUo"></script>
+    <script type="text/javascript" src="Scripts/compatibility.js"></script>
+    <script type="text/javascript" src="Scripts/baidu/location.js"></script>
 </head>
 <body>
     <div class="content">

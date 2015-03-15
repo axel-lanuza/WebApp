@@ -23,7 +23,6 @@ namespace WebApp
     {
 
         [WebMethod(EnableSession = true, Description = "<b>获取城市经纬度信息</b>")]
-        //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public string GetCityPosition(string city)
         {
             JsonResponse resp = new JsonResponse();
@@ -50,7 +49,6 @@ namespace WebApp
         }
 
         [WebMethod(EnableSession = true, Description = "<b>获取城市经纬度信息，城市名间以“,”分割</b>")]
-        //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public string GetCitysPosition(string citys)
         {
             JsonResponse resp = new JsonResponse();
@@ -82,6 +80,32 @@ namespace WebApp
             }
             return JsonConvert.SerializeObject(resp);
         }
+
+        [WebMethod(EnableSession = true, Description = "<b>获取城市经纬度信息</b>")]
+        public string GetPointLocation(double lng, double lat)
+        {
+            JsonResponse resp = new JsonResponse();
+            try
+            {
+                string url = "http://api.map.baidu.com/geocoder/v2/?ak=nbN4XhiWzpCkC1IakFERAuUo&output=json&location=" + string.Format("{0},{1}", lat, lng);
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+                HttpWebResponse res = (HttpWebResponse)req.GetResponse();
+                using (StreamReader reader = new StreamReader(res.GetResponseStream(), Encoding.UTF8))
+                {
+                    string strResult = reader.ReadToEnd();
+                    resp.Data = strResult;
+                    reader.Close();
+                }
+                resp.Result = true;
+                resp.Message = "查询成功";
+            }
+            catch (Exception ex)
+            {
+                resp.Result = false;
+                resp.Message = ex.Message;
+            }
+            return JsonConvert.SerializeObject(resp);
+        }
     }
 }
 
@@ -94,13 +118,13 @@ class httpresponse
 
 class httpresult
 {
-    public httplocation location;
+    public httppoint location;
     public int precise;
     public int confidence;
     public string level;
 }
 
-class httplocation
+class httppoint
 {
     public double lng;
     public double lat;

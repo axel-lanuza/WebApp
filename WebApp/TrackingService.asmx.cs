@@ -16,7 +16,7 @@ namespace WebApp
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // 若要允许使用 ASP.NET AJAX 从脚本中调用此 Web 服务，请取消注释以下行。 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class TrackingService : System.Web.Services.WebService
     {
         static TrackingService()
@@ -25,7 +25,7 @@ namespace WebApp
             {
                 bool isExist = DataHelper.HasRow(string.Format("select name from sqlite_master where type='table' and name<>'sqlite_sequence' and name='sy_user_position'"));
                 if (!isExist)
-                    DataHelper.ExecuteNonQuery("create table sy_user_position(id integer primary key autoincrement,time timestamp(3),user varchar2(100),latitude number(20),longitude number(20))");
+                    DataHelper.ExecuteNonQuery("create table sy_user_position(id integer primary key autoincrement,time timestamp(3),user varchar2(200),latitude number(20),longitude number(20))");
             }
             catch
             {

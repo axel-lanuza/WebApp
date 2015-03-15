@@ -124,6 +124,24 @@ if (!Array.prototype.filter) {
     };
 }
 
+String.prototype.padLeft = function (total, ch) {
+    if (!ch || ch.constructor !== String)
+        ch = ' ';
+    return Array(Math.max(Math.ceil((total - this.length) / ch.length), 0) + 1).join(ch).slice(this.length - total) + this;
+};
+
+String.prototype.padRight = function (total, ch) {
+    if (!ch || ch.constructor !== String)
+        ch = ' ';
+    return this + Array(Math.max(Math.ceil((total - this.length) / ch.length), 0) + 1).join(ch).slice(0, total - this.length);
+};
+
+String.prototype.padCenter = function (total, ch, c) {
+    if (!ch || ch.constructor !== String)
+        ch = ' ';
+    return this.padLeft(Math[c ? "ceil" : "floor"]((this.length + total) / 2), ch).padRight(total, ch);
+};
+
 function fill0(val, length) {
     val = val.toString();
     length -= val.length;
