@@ -26,6 +26,12 @@
         },
         _genTypeByProp: function (name, val) {
             switch (Object.prototype.toString.apply(val)) {
+                case "[object Boolean]": {
+                    return "bool";
+                }
+                case "[object Null]": {
+                    return "object";
+                }
                 case "[object Number]": {
                     return val.toString().indexOf(".") > -1 ? "double" : "int";
                 }

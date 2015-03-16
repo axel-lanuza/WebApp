@@ -13,6 +13,7 @@ body {
     height: 50px;
     background-color: #808080;
     font-size: 30px;
+    overflow-y: hidden;
 }
 
     .top .title {
@@ -33,6 +34,7 @@ body {
     .container .left {
         float: left;
         /*background-color: green;*/
+        overflow-y: hidden;
     }
 
     .container .middle {
