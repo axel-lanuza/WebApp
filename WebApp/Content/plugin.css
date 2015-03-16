@@ -1,8 +1,12 @@
 ﻿.back {
     background-image: url('plugin/back.png');
-    height: 50px;
+    height: 45px;
     width: 50px;
     margin: 10px;
     position: absolute;
     cursor: pointer;
 }
+
+    .back:hover {
+        background-color: #e695e0;
+    }

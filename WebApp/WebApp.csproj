@@ -1154,6 +1154,7 @@
     <Content Include="Scripts\weboffice\style.css" />
     <Content Include="Scripts\weboffice\WebOffice.cab" />
     <Content Include="json.html" />
+    <Content Include="tool.html" />
     <Content Include="View\resume\template.html" />
     <Content Include="resume.html" />
     <Content Include="Scripts\custom\jquery.objtree.js" />
