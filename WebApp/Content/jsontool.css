@@ -19,12 +19,20 @@ body {
         margin: 10px;
     }
 
+        .top .title a {
+            text-decoration: none;
+        }
+
+            .top .title a:hover {
+                text-decoration: underline;
+            }
+
 .container {
 }
 
     .container .left {
         float: left;
-        background-color: green;
+        /*background-color: green;*/
     }
 
     .container .middle {

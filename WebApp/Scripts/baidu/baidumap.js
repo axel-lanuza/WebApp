@@ -1,13 +1,18 @@
 ﻿$(function () {
     var _map = $('#map');
-    var height = this.documentElement.clientHeight - 60;
-    var width = this.documentElement.clientWidth - 300;
+    var height = this.documentElement.clientHeight - 50;
+    var width = this.documentElement.clientWidth - 400;
     _map.css('height', height);
     _map.css('width', width);
     var _panel = $('.panel');
     _panel.css('height', height);
-    _panel.css('width', 300);
-    $('.title').css('width', 296);
+    _panel.css('width', 400);
+    $('.title').css('width', 396);
+
+
+    var parent = $('#container', _panel);
+    parent.css('height', height - 24);
+    parent.objtree({});
 
     var map = new BMap.Map("map");
     map.centerAndZoom(new BMap.Point(106.651977, 37.140511), 5); // 创建Map实例
@@ -19,12 +24,13 @@
 
     map.clearOverlays();
 
-    //postWebService('/MapService.asmx/GetCitysPosition', { citys: '上海,杭州' }, function (_data) {
-
-    //});
-
-    //focusOnPoint(map, { lng: 121.461801, lat: 31.275322 });
-    getLocation({ lng: 121.461801, lat: 31.275322 });
+    map.addEventListener("click", function (e) {
+        postWebService('/MapService.asmx/GetPointLocation', e.point, function (data) {
+            parent.objtree('clear');
+            if (data.Result)
+                parent.objtree('set', data.Data);
+        });
+    });
 });
 
 function postWebService(url, options, func) {

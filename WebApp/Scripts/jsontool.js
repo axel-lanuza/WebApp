@@ -18,6 +18,10 @@
     text.css('height', height - topheight - 5);
 
     right.objtree({});
+
+    var t = { name: 'json', array1: ['1-1', '1-2', '1-3', '1-4'], array2: [21, 22, 23, 24], obj: { name: 'obj', bool: true } };
+    right.objtree('set', t);
+
     $(".ok").click(function () {
         var t = text.val();
         right.objtree('clear');
