@@ -121,6 +121,7 @@
     <Content Include="Content\jsontool.css" />
     <Content Include="Scripts\baidu\location.js" />
     <Content Include="Scripts\default.js" />
+    <Content Include="Scripts\jquery.json2csharp.js" />
     <Content Include="Scripts\plugin.js" />
     <Content Include="Scripts\resume\resume.js" />
     <Content Include="Scripts\jsontool.js" />

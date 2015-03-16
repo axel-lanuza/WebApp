@@ -27,8 +27,10 @@
     map.addEventListener("click", function (e) {
         postWebService('/MapService.asmx/GetPointLocation', e.point, function (data) {
             parent.objtree('clear');
-            if (data.Result)
+            if (data.Result) {
                 parent.objtree('set', data.Data);
+                //var d = JSON2CSharp.convert(data.Data);
+            }
         });
     });
 });

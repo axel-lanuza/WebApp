@@ -73,6 +73,16 @@ if (String.prototype.trimRight === undefined) {
     };
 }
 
+if (String.prototype.format === undefined) {
+    String.prototype.format = function () {
+        var args = arguments;
+        return this.replace(/\{(\d+)\}/g,
+            function (m, i) {
+                return args[i];
+            });
+    }
+}
+
 if (!Array.prototype.forEach) {
     Array.prototype.forEach = function (callback, thisArg) {
         var T, k;
