@@ -18,11 +18,11 @@
             for (var n in obj) {
                 var v = obj[n];
                 n = n.trim();
-                clas += "    {0}    public {1} {2} { get; set; }\r\n\r\n".format(this._genComment(v), this._genTypeByProp(n, v), n);
+                clas += "    {0}    public {1} {2} { get; set; }\r\n".format(this._genComment(v), this._genTypeByProp(n, v), n);
             }
-            clas += "}\r\n\r\n";
+            clas += "}\r\n";
             this._allClass.push(clas);
-            return this._allClass.join("\r\n\r\n");
+            return this._allClass.join("\r\n");
         },
         _genTypeByProp: function (name, val) {
             switch (Object.prototype.toString.apply(val)) {
