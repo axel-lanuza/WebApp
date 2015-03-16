@@ -1,0 +1,58 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    font-size: 12px;
+}
+
+.top {
+    height: 50px;
+    background-color: #808080;
+    font-size: 30px;
+}
+
+    .top .title {
+        margin: 10px;
+    }
+
+        .top .title a {
+            text-decoration: none;
+        }
+
+            .top .title a:hover {
+                text-decoration: underline;
+            }
+
+.container {
+}
+
+    .container .left {
+        float: left;
+        /*background-color: green;*/
+    }
+
+    .container .middle {
+        float: left;
+        background-color: #dcd1d1;
+    }
+
+    .container .right {
+        float: left;
+        /*background-color: green;*/
+    }
+
+    .container textarea {
+        float: left;
+        padding: 1px;
+    }
+
+.ok {
+    margin: 30px;
+    width: 60px;
+    height: 25px;
+    font-size: 14px;
+}
