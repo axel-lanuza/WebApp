@@ -9,9 +9,11 @@
     _panel.css('width', 400);
     $('.title').css('width', 396);
 
+    var search = $('#search', _panel);
+    var inputinfo = $('#inputinfo', _panel);
 
     var parent = $('#container', _panel);
-    parent.css('height', height - 24);
+    parent.css('height', height - 49);
     parent.objtree({});
 
     var map = new BMap.Map("map");
@@ -25,13 +27,32 @@
     map.clearOverlays();
 
     map.addEventListener("click", function (e) {
-        postWebService('/MapService.asmx/GetPointLocation', e.point, function (data) {
-            parent.objtree('clear');
-            if (data.Result) {
-                parent.objtree('set', data.Data);
-                //var d = JSON2CSharp.convert(data.Data);
+        inputinfo.val(e.point.lng + ',' + e.point.lat);
+        getLocation(parent, e.point);
+    });
+
+    search.click(function () {
+        var info = inputinfo.val();
+        if (info.length == 0) {
+            alert('请在左侧框中输入正确的经、纬度...');
+            return;
+        }
+        if (info.indexOf(',') > 0) {
+            var _point = info.split(',');
+            if (_point.length === 2) {
+                var poi = { lng: _point[0], lat: _point[1] };                
+                getLocation(parent, poi);
+                focusOnPoint(map, poi);
+                return;
+            } else {
+                alert('请在左侧框中输入正确的经、纬度...');
+                return;
             }
-        });
+        }
+        else {
+            alert('请在左侧框中输入正确的经、纬度...');
+            return;
+        }
     });
 });
 
@@ -47,9 +68,13 @@ function postWebService(url, options, func) {
     });
 }
 
-function getLocation(point) {
+function getLocation(parent, point) {
     postWebService('/MapService.asmx/GetPointLocation', point, function (data) {
-
+        parent.objtree('clear');
+        if (data.Result) {
+            parent.objtree('set', data.Data);
+            //var d = JSON2CSharp.convert(data.Data);
+        }
     });
 }
 

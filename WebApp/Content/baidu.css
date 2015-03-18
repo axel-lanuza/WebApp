@@ -34,6 +34,11 @@ body {
     background-color: #ffffff;
 }
 
+    .panel .op {
+        height: 25px;
+        background-color: #e2d9d9;
+    }
+
     .panel .title {
         padding: 2px;
         height: 20px;
