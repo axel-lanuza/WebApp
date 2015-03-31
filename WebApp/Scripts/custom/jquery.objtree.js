@@ -158,8 +158,11 @@
             $.each(node.childNodes, function (i, childnode) {
                 if (childnode.className === 'contain') {
                     var marknode = find(node.childNodes, 'mark');
-                    if (marknode)
+                    if (marknode) {
+                        var _parent = $('.mark', childnode).parent();
+                        toggleNode(_parent[0], mark);
                         toggle(childnode, marknode, mark);
+                    }
                 }
             });
         } catch (e) {

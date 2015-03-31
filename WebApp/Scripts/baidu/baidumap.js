@@ -79,7 +79,7 @@ function getLocation(parent, point) {
 }
 
 function focusOnPoint(map, point) {
-    map.centerAndZoom(new BMap.Point(point.lng, point.lat), 12);
+    map.centerAndZoom(new BMap.Point(point.lng, point.lat), 14);
 }
 
 function drawHeatMap(map, points) {
