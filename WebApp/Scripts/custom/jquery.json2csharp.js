@@ -11,18 +11,37 @@
         return this.replace(/(^\s*)|(\s*$)/g, "");
     }
 
+    if (Array.prototype.find === undefined) {
+        Array.prototype.find = function (func) {
+            for (var i = 0; i < this.length; i++) {
+                if (func(this[i]))
+                    return this[i];
+            }
+        };
+    }
+
     var JSON2CSharp = {
         _allClass: [],
         _genClassCode: function (obj, name) {
-            var clas = "public class {0}\r\n{\r\n".format(name || "Root");
-            for (var n in obj) {
-                var v = obj[n];
-                n = n.trim();
-                clas += "    {0}    public {1} {2} { get; set; }\r\n".format(this._genComment(v), this._genTypeByProp(n, v), n);
+            var _name = name || "Root";
+            var _cls = this._allClass.find(function (cls) {
+                return cls.name === _name;
+            });
+            if (!_cls) {
+                var clas = "public class {0}\r\n{\r\n".format(_name);
+                for (var n in obj) {
+                    var v = obj[n];
+                    n = n.trim();
+                    clas += "    {0}    public {1} {2} { get; set; }\r\n".format(this._genComment(v), this._genTypeByProp(n, v), n);
+                }
+                clas += "}\r\n";
+                this._allClass.push({ name: _name, code: clas });
             }
-            clas += "}\r\n";
-            this._allClass.push(clas);
-            return this._allClass.join("\r\n");
+            var _allcls = [];
+            for (var clsindex = 0; clsindex < this._allClass.length; clsindex++) {
+                _allcls.push(this._allClass[clsindex].code);
+            }
+            return _allcls.join("\r\n");
         },
         _genTypeByProp: function (name, val) {
             switch (Object.prototype.toString.apply(val)) {
