@@ -28,14 +28,20 @@
                 return cls.name === _name;
             });
             if (!_cls) {
-                var clas = "public class {0}\r\n{\r\n".format(_name);
-                for (var n in obj) {
-                    var v = obj[n];
-                    n = n.trim();
-                    clas += "    {0}    public {1} {2} { get; set; }\r\n".format(this._genComment(v), this._genTypeByProp(n, v), n);
+                if (obj.constructor == Object) {
+                    var clas = "public class {0}\r\n{\r\n".format(_name);
+                    for (var n in obj) {
+                        var v = obj[n];
+                        n = n.trim();
+                        clas += "    {0}    public {1} {2} { get; set; }\r\n".format(this._genComment(v), this._genTypeByProp(n, v), n);
+                    }
+                    clas += "}\r\n";
+                    this._allClass.push({ name: _name, code: clas });
+                } else if (obj.constructor == Array) {
+                    for (var n in obj) {
+                        this._genClassCode(obj[n], _name + n);
+                    }
                 }
-                clas += "}\r\n";
-                this._allClass.push({ name: _name, code: clas });
             }
             var _allcls = [];
             for (var clsindex = 0; clsindex < this._allClass.length; clsindex++) {
