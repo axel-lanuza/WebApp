@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.html" />
+    <Content Include="Content\tools\sqlite.css" />
     <Content Include="Scripts\bootstrapDemo\about.html" />
     <Content Include="Scripts\bootstrapDemo\favorite - 复制.html" />
     <Content Include="bootstrap.html" />
@@ -141,12 +142,15 @@
     <Content Include="Scripts\carousel\carousel.js" />
     <Content Include="Scripts\custom\jquery.carousel.js" />
     <Content Include="Scripts\custom\jquery.table.js" />
+    <Content Include="Scripts\custom\jquery.progress.js" />
     <Content Include="Scripts\default.js" />
     <Content Include="Scripts\custom\jquery.json2csharp.js" />
     <Content Include="Scripts\plugin.js" />
     <Content Include="Scripts\resume\resume.js" />
+    <Content Include="Scripts\session.js" />
     <Content Include="Scripts\tools\csharp.js" />
     <Content Include="Scripts\tools\jsontool.js" />
+    <Content Include="Scripts\tools\sqlite.js" />
     <Content Include="Scripts\weboffice\office.html" />
     <Content Include="Scripts\anoslide\images\badge.png" />
     <Content Include="Scripts\anoslide\images\dots.png" />
@@ -1174,6 +1178,8 @@
     <Content Include="Scripts\weboffice\WebOffice.cab" />
     <Content Include="json.html" />
     <Content Include="carousel.html" />
+    <Content Include="SessionService.asmx" />
+    <Content Include="sqlite.html" />
     <Content Include="test.html" />
     <Content Include="tool.html" />
     <Content Include="View\resume\template.html" />
@@ -1345,6 +1351,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Code\SimpleDataTable.cs" />
+    <Compile Include="SessionService.asmx.cs">
+      <DependentUpon>SessionService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SQLiteDbService.asmx.cs">
       <DependentUpon>SQLiteDbService.asmx</DependentUpon>
       <SubType>Component</SubType>
