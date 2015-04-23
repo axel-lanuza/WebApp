@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sqlite数据库操作</title>
+    <script type="text/javascript" src="Scripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/custom/jquery.progress.js"></script>
+    <script type="text/javascript" src="Scripts/tools/sqlite.js"></script>
+    <script type="text/javascript" src="Scripts/session.js"></script>
+    <link rel="stylesheet" type="text/css" href="Scripts/bootstrap3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="Content/tools/sqlite.css" />
+</head>
+<body oncontextmenu="return false">
+    <div class="c-top"><div class="c-title"><a href="sqlite.html">Sqlite数据库操作工具</a></div></div>
+    <div class="c-left">
+        <div class="c-panel-main">
+            <div style="font-weight:bold;font-size:18px;padding:8px;background-color:#ccdfe5">数据库表</div>
+            <div id="tablelist"></div>
+        </div>
+        <div class="c-panel-bottom" style="padding:5px;">
+            <input id="refresh" type="button" value="刷新" style="height:20px;width:60px;float:right;" />
+        </div>
+    </div>
+    <div class="c-center">
+        <div id="detaildata" class="c-panel-main" style="overflow: auto">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="c-head"></tr>
+                </thead>
+                <tbody class="c-rows"></tbody>
+            </table>
+        </div>
+        <div class="c-panel-bottom" style="padding:5px;">
+            <span>操作类型：</span>
+            <select id="operate">
+                <option value="0">查询</option>
+                <option value="1">编辑</option>
+            </select>
+            <input id="execute" type="button" value="执行" style="height:20px;width:60px;float:right;" />
+        </div>
+    </div>
+    <div class="c-bottom">
+        <div class="c-panel-main">
+            <textarea id="detailsql" style="height:100%;width:100%;"></textarea>
+        </div><div class="c-panel-bottom"></div>
+    </div>
+</body>
+</html>

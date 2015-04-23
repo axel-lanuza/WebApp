@@ -9,9 +9,10 @@ www.brightmoon.cn
         var css = '<style type="text/css">';
         css += '.my-regional{width:' + options.width + 'px;height:' + options.height + 'px;}';
         css += '.my-regional ul,li{list-style:none;}';
-        css += '.my-regional div,ul,li,a,img{margin:0;padding: 0;}';
+        css += '.my-regional div,ul,li,a,img{margin:0;padding:0;}';
+        css += '.my-img{height:auto;width:auto;max-width:100%;max-height:100%;}';
         css += '.my-regional a{text-decoration:none;}';
-        css += '.my-wrapper{position:relative;margin:' + options.margin + ';border:' + (options.border ? 1 : 0) + 'px solid black;}';
+        css += '.my-wrapper{position:absolute;margin:' + options.margin + ';border:' + (options.border ? 1 : 0) + 'px solid black;background-color:' + options['background-color'] + ';}';
         css += '.my-banner{overflow:hidden;}';
         css += '.my-img-list{z-index:10;}';
         css += '.my-img-list li{display:none;}';
@@ -80,27 +81,40 @@ www.brightmoon.cn
                 data = JSON.parse(data);
             state.options.data = data;
             var imglist = [], infolist = [], indexlist = [];
+            var stretch = state.options['stretch'];
             for (var i = 0; i < data.length; i++) {
                 var item = data[i];
-                if (i == state.options['default-index']) {
-                    imglist.push('<li class="my-imgOn img-' + i + '"><a href="' + (item.href ? item.href : '#') + '"><img src="' + item.src + '" class="my-regional" alt="' + (item.alt ? item.alt : item.src) + '"></a></li>');
-                    infolist.push('<li class="my-infoOn info-' + i + '" style="' + state.options['info-style'] + '">' + item.info + '</li>');
-                    indexlist.push('<li class="my-indexOn index-' + i + '">' + (state.options['show-index'] ? (i + 1) : '') + '</li>');
-                }
-                else {
-                    imglist.push('<li class="img-' + i + '"><a href="' + (item.href ? item.href : '#') + '"><img src="' + item.src + '" class="my-regional" alt="' + (item.alt ? item.alt : item.src) + '"></a></li>');
-                    infolist.push('<li class="info-' + i + '" style="' + state.options['info-style'] + '">' + item.info + '</li>');
-                    indexlist.push('<li class="index-' + i + '">' + (state.options['show-index'] ? (i + 1) : '') + '</li>');
-                }
+                imglist.push('<li class="img-' + i + '"><a href="' + (item.href ? item.href : '#') + '"><img src="' + item.src + '" class="my-regional' + (stretch ? '' : ' my-img') + '" alt="' + (item.alt ? item.alt : item.src) + '"></a></li>');
+                infolist.push('<li class="info-' + i + '" style="' + state.options['info-style'] + '">' + item.info + '</li>');
+                indexlist.push('<li class="index-' + i + '">' + (state.options['show-index'] ? (i + 1) : '') + '</li>');
             }
-            var sl = '<div class="my-banner my-regional"><ul class="my-img-list my-regional">';
+            var sl = '<div class="my-banner my-regional"><ul class="my-img-list my-regional" style="text-align:center;">';
             sl += imglist.join('');
             sl += '</ul><div class="my-info-background"></div><ul class="my-info-list">';
             sl += infolist.join('');
             sl += '</ul><ul class="my-index-list">';
             sl += indexlist.join('');
             sl += '</ul></div>'
-            $(sl).appendTo(panel);
+            var images = $(sl).appendTo(panel);
+            var defindex = state.options['default-index'];
+            $('.my-img-list li', images).each(function (i, item) {
+                if (i == defindex) {
+                    $(this).addClass('my-imgOn');
+                    return;
+                }
+            });
+            $('.my-info-list li', images).each(function (i, item) {
+                if (i == defindex) {
+                    $(this).addClass('my-infoOn');
+                    return;
+                }
+            });
+            $('.my-index-list li', images).each(function (i, item) {
+                if (i == defindex) {
+                    $(this).addClass('my-indexOn');
+                    return;
+                }
+            });
             carousel(panel, state.options, data.length);
         }
     }
@@ -203,6 +217,7 @@ www.brightmoon.cn
         'data': [],
         'height': 'auto',
         'width': 'auto',
+        'background-color': 'white',
         'info-background-color': 'black',            //显示信息背景颜色
         'info-height': 40,                           //显示信息背景的高度
         'info-opacity': 0.1,                         //显示信息背景的透明
@@ -215,6 +230,7 @@ www.brightmoon.cn
         'auto': true,                                //自动切换
         'border': true,                              //显示边框
         'margin': '30px auto',
+        'stretch': true,
         onChange: function (item) { }
     };
 })(jQuery);

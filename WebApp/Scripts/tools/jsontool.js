@@ -3,6 +3,7 @@
     var width = this.documentElement.clientWidth;
     var top = $('.top');
     var topheight = top.height();
+    topheight = topheight == null ? 0 : topheight;
     var left = $('.left');
     var middle = $('.middle');
     var right = $('.right');
