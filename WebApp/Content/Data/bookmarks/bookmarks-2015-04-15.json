@@ -1,0 +1,44 @@
+{
+	"guid" : "root________",
+	"title" : "",
+	"index" : 0,
+	"dateAdded" : 1378175697718000,
+	"lastModified" : 1378212211797000,
+	"id" : 1,
+	"type" : "text/x-moz-place-container",
+	"root" : "placesRoot",
+	"children" : [{
+			"guid" : "toolbar_____",
+			"title" : "Bookmarks Toolbar",
+			"children" : [{
+					"guid" : "GRGyxyPiz1J2",
+					"title" : "文件-1",					
+					"children" : [{
+							"guid" : "qB4VCvp5GiBJ",
+							"title" : "文件-2",
+							"children" : [{
+									"guid" : "7ZijcAAXC4P9",
+									"title" : "文件-3",
+									"children" : [{
+											"guid" : "_-90dsCCfRhM",
+											"title" : "百度一下，你就知道",
+											"uri" : "https://www.baidu.com/"
+										}
+									]
+								}, {
+									"guid" : "D5kzT8l4DXVi",
+									"title" : "Bing",
+									"uri" : "https://www.bing.com/?scope=web&pc=MOZI"
+								}
+							]
+						}, {
+							"guid" : "cOcekyByIY1H",
+							"title" : "阿里云-打造数据分享第一平台",
+							"uri" : "http://www.aliyun.com/"
+						}
+					]
+				}
+			]
+		}
+	]
+}

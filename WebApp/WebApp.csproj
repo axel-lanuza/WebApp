@@ -67,6 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="about.html" />
+    <Content Include="Scripts\bootstrapDemo\about.html" />
+    <Content Include="Scripts\bootstrapDemo\favorite - 复制.html" />
+    <Content Include="bootstrap.html" />
     <Content Include="Content\home.css" />
     <Content Include="Content\home\0.jpg" />
     <Content Include="Content\home\1.jpg" />
@@ -121,7 +124,23 @@
     <Content Include="Content\jsontool.css" />
     <Content Include="Content\tools\csharp.css" />
     <Content Include="csharp.html" />
+    <Content Include="default.html" />
+    <Content Include="Scripts\bootstrapDemo\favorite.html" />
+    <Content Include="FileWebService.asmx" />
     <Content Include="Scripts\baidu\location.js" />
+    <Content Include="Scripts\bootstrapDemo\favorite.js" />
+    <Content Include="Scripts\bootstrap3.3.4\css\bootstrap-theme.css" />
+    <Content Include="Scripts\bootstrap3.3.4\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\bootstrap3.3.4\css\bootstrap.css" />
+    <Content Include="Scripts\bootstrap3.3.4\css\bootstrap.min.css" />
+    <Content Include="Scripts\bootstrap3.3.4\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap3.3.4\js\bootstrap.js" />
+    <Content Include="Scripts\bootstrap3.3.4\js\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap3.3.4\js\npm.js" />
+    <Content Include="Scripts\bootstrapDemo\bootstrapdemo.js" />
+    <Content Include="Scripts\carousel\carousel.js" />
+    <Content Include="Scripts\custom\jquery.carousel.js" />
+    <Content Include="Scripts\custom\jquery.table.js" />
     <Content Include="Scripts\default.js" />
     <Content Include="Scripts\custom\jquery.json2csharp.js" />
     <Content Include="Scripts\plugin.js" />
@@ -1154,10 +1173,19 @@
     <Content Include="Scripts\weboffice\style.css" />
     <Content Include="Scripts\weboffice\WebOffice.cab" />
     <Content Include="json.html" />
+    <Content Include="carousel.html" />
+    <Content Include="test.html" />
     <Content Include="tool.html" />
     <Content Include="View\resume\template.html" />
     <Content Include="resume.html" />
     <Content Include="Scripts\custom\jquery.objtree.js" />
+    <Content Include="Scripts\bootstrap3.3.4\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\bootstrap3.3.4\css\bootstrap.css.map" />
+    <Content Include="Scripts\bootstrap3.3.4\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\bootstrap3.3.4\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\bootstrap3.3.4\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\bootstrap3.3.4\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Data\bookmarks\bookmarks-2015-04-14.json" />
     <None Include="Scripts\office\1.1\office-vsdoc.js" />
     <Content Include="Scripts\office\1.1\office.debug.js" />
     <Content Include="Scripts\office\1.1\office.js" />
@@ -1302,6 +1330,10 @@
     </Compile>
     <Compile Include="Demo.aspx.designer.cs">
       <DependentUpon>Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileWebService.asmx.cs">
+      <DependentUpon>FileWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome</title>
+    <script type="text/javascript" src="Scripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrapDemo/bootstrapdemo.js"></script>
+    <link rel="stylesheet" type="text/css" href="Scripts/bootstrap3.3.4/css/bootstrap.min.css" />
+    <style type="text/css">
+        .c-title {
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: inherit;
+            background-color: #eee;
+        }
+
+            .c-title h1,
+            .c-title .h1 {
+                color: inherit;
+            }
+
+        .container .c-title {
+            border-radius: 6px;
+        }
+
+        .c-tabs {
+            height: 40px;
+        }
+
+        .c-content {
+            height: 460px;
+        }
+
+        .c-nav {
+            padding: 5px;
+        }
+
+        .c-img {
+            width: 1140px;
+        }
+
+        .c-fr {
+            width: 100%;
+            margin: 5px;
+        }
+
+        .c-carousel > li:hover {
+            background-color: blue;
+        }
+
+        .c-tab-container {
+        }
+
+        .c-nav-tabs {
+            width: 140px;
+            margin-top: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+        }
+    </style>
+</head>
+<body data-spy="scroll" style="overflow: hidden;">
+    <div class="container">
+        <div class="c-title">
+            <h1>Welcome Page</h1>
+        </div>
+
+        <ul class="c-tabs nav nav-tabs">
+            <li class="active">
+                <a href="#home" data-toggle="tab" class="tooltip-show" title="Home Page">Home</a>
+            </li>
+            <li><a href="#introduction" data-toggle="tab" class="tooltip-show" title="Simple introduction for this Web">Introduction</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Tools <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#programming" class="tooltip-show" tabindex="-1" data-toggle="tab" title="Custom Programming Tools">Programming</a></li>
+                    <li><a href="#webService" class="tooltip-show" tabindex="-1" data-toggle="tab" title="Custom Web Service API">Web Service</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#other" class="tooltip-show" tabindex="-1" data-toggle="tab" title="Other Tools">Other</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact" data-toggle="tab" class="tooltip-show" title="Show My Detail Contact Information To Contact Me">Contact me</a></li>
+        </ul>
+        <div id="tabContent" class="c-content tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <div id="carousel" class="carousel slide">
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators c-carousel">
+                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel" data-slide-to="1"></li>
+                        <li data-target="#carousel" data-slide-to="2"></li>
+                        <li data-target="#carousel" data-slide-to="3"></li>
+                        <li data-target="#carousel" data-slide-to="4"></li>
+                        <li data-target="#carousel" data-slide-to="5"></li>
+                        <li data-target="#carousel" data-slide-to="6"></li>
+                        <li data-target="#carousel" data-slide-to="7"></li>
+                        <li data-target="#carousel" data-slide-to="8"></li>
+                        <li data-target="#carousel" data-slide-to="9"></li>
+                    </ol>
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div class="item active c-img">
+                            <img src="Content/home/1.jpg" alt="First slide">
+                        </div>
+                        <div class="item c-img">
+                            <img src="Content/home/2.jpg" alt="First slide">
+                        </div>
+                        <div class="item c-img">
+                            <img src="Content/home/3.jpg" alt="First slide">
+                        </div>
+                        <div class="item c-img">
+                            <img src="Content/home/4.jpg" alt="First slide">
+                        </div>
+                        <div class="item c-img">
+                            <img src="Content/home/5.jpg" alt="First slide">
+                        </div>
+                        <div class="item c-img">
+                            <img src="Content/home/6.jpg" alt="First slide">
+                        </div>
+                        <div class="item c-img">
+                            <img src="Content/home/7.jpg" alt="First slide">
+                        </div>
+                        <div class="item c-img">
+                            <img src="Content/home/8.jpg" alt="First slide">
+                        </div>
+                        <div class="item c-img">
+                            <img src="Content/home/9.jpg" alt="First slide">
+                        </div>
+                    </div>
+                    <!-- 轮播（Carousel）导航 -->
+                    <a class="carousel-control left" href="#carousel"
+                       data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#carousel"
+                       data-slide="next">&rsaquo;</a>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="introduction">
+                <iframe class="c-fr" src="Scripts/bootstrapDemo/favorite.html" frameborder="0"></iframe>
+            </div>
+            <div class="tab-pane fade" id="programming">
+                <!--<iframe class="c-fr" src="json.html" frameborder="0"></iframe>-->
+            </div>
+            <div class="tab-pane fade" id="webService">
+                <!--<iframe class="c-fr" src="SQLiteDbService.asmx" frameborder="0"></iframe>-->
+            </div>
+            <div class="tab-pane fade" id="other">
+                <!--<iframe class="c-fr" src="baidumap.html" frameborder="0"></iframe>-->
+            </div>
+            <div class="tab-pane fade" id="contact">
+                <iframe class="c-fr" src="Scripts/bootstrapDemo/about.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
