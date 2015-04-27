@@ -148,6 +148,7 @@
     <Content Include="Scripts\plugin.js" />
     <Content Include="Scripts\resume\resume.js" />
     <Content Include="Scripts\session.js" />
+    <Content Include="Scripts\test.js" />
     <Content Include="Scripts\tools\csharp.js" />
     <Content Include="Scripts\tools\jsontool.js" />
     <Content Include="Scripts\tools\sqlite.js" />
