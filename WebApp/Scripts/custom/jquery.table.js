@@ -100,6 +100,7 @@
         }
         options.info.text('');
         options.totalCount = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
+        options.pageNumber = 0;
         bindingRows(options);
     }
 

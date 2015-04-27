@@ -90,6 +90,7 @@ function refreshTableList(detailpanel, tablelist) {
 }
 
 function bindingData(parent, data, type) {
+    //parent.table('clear');
     if (data.Result && type === 'Select') {
         var cols = [];
         var colcount = data.Data.ColumnNames.length;
