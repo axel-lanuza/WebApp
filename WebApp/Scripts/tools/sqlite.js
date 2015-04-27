@@ -4,16 +4,42 @@
     var bottom = $('.c-bottom');
 
     var leftmain = $('.c-panel-main', left);
-    var centermain = $('.c-panel-main', center);
+    var info = $('#i-info', center);
+    var tablemain = $('.c-panel-main', center).table({
+        border: true,
+        pageSize: 100,
+        onCompleted: function (opt) {
+            info.text('当前为第' + (opt.totalCount > 0 ? (opt.pageNumber + 1) : 0) + '页，共' + opt.totalCount + '页');
+        }
+    });
     var bottommain = $('.c-panel-main', bottom);
-
     var tablelist = $('#tablelist', leftmain);
     var detailsql = $('#detailsql', bottommain);
     var operate = $('#operate', center);
 
-    refreshTableList(centermain, tablelist);
+    var first = $('#i-first', center).click(function () {
+        loadStatus(true, '正在执行，请稍候...');
+        tablemain.table('first');
+        loadStatus(false);
+    });
+    var last = $('#i-last', center).click(function () {
+        loadStatus(true, '正在执行，请稍候...');
+        tablemain.table('last');
+        loadStatus(false);
+    });
+    var prev = $('#i-prev', center).click(function () {
+        loadStatus(true, '正在执行，请稍候...');
+        tablemain.table('prev');
+        loadStatus(false);
+    });
+    var next = $('#i-next', center).click(function () {
+        loadStatus(true, '正在执行，请稍候...');
+        tablemain.table('next');
+        loadStatus(false);
+    });
+    refreshTableList(tablemain, tablelist);
     var btnrefresh = $('.c-panel-bottom #refresh', left).click(function () {
-        refreshTableList(centermain, tablelist);
+        refreshTableList(tablemain, tablelist);
     });
 
     var btnexecute = $('.c-panel-bottom #execute', center).click(function () {
@@ -28,16 +54,15 @@
             type = 'Select';
         else
             type = 'Edit';
-        loadData(type, centermain, sql);
+        loadData(type, tablemain, sql);
     });
 });
 
 function loadData(type, parent, sql) {
-    var head = $('.c-head', parent).empty();
-    var rows = $('.c-rows', parent).empty();
+    parent.table('clear');
     loadStatus(true, '正在执行，请稍候...');
     postWebService('/SQLiteDbService.asmx/' + type, { sql: sql }, function (data) {
-        bindingData(head, rows, data, type);
+        bindingData(parent, data, type);
         loadStatus(false);
     });
 }
@@ -64,24 +89,16 @@ function refreshTableList(detailpanel, tablelist) {
     });
 }
 
-function bindingData(head, rows, data, type) {
+function bindingData(parent, data, type) {
     if (data.Result && type === 'Select') {
+        var cols = [];
         var colcount = data.Data.ColumnNames.length;
-        var cl = '';
-        var rsl = '';
         for (var cindex = 0; cindex < colcount; cindex++) {
-            cl += '<th>' + data.Data.ColumnNames[cindex] + '</th>';
+            var col = data.Data.ColumnNames[cindex];
+            cols.push({ field: col, title: col });
         }
-        for (var rindex = 0; rindex < data.Data.Rows.length; rindex++) {
-            var rl = '<tr>';
-            for (var cindex = 0; cindex < colcount; cindex++) {
-                rl += '<td>' + data.Data.Rows[rindex][cindex] + '</td>';
-            }
-            rl += '</tr>';
-            rsl += rl;
-        }
-        $(cl).appendTo(head);
-        $(rsl).appendTo(rows);
+        var rows = data.Data.Rows;
+        parent.table('set', { columns: cols, rows: rows });
         return;
     }
     alert(data.Message + ',' + data.Data);

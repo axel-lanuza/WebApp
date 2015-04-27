@@ -2,7 +2,7 @@
     function generalStyle(options) {
         var css = '<style type="text/css">';
         if (options.border)
-            css += 'table,td,th{border-style:solid;border-width:1px;border-collapse:collapse;}';
+            css += 'table,td,th{border-style:dotted;border-width:1px;border-collapse:collapse;}';
         else
             css += 'table,td,th{padding:0;border-collapse:collapse;}';
         css += '#' + options.id + '{padding:0;margin:0;width:' + (options.width === 'auto' ? '100%' : (options.width + 'px')) + ';height:' + (options.height === 'auto' ? '100%' : (options.height + 'px')) + ';}';
@@ -26,7 +26,7 @@
         sl += '<div class="c-foot"><span class="c-first">首页</span><span class="c-prev">上一页</span><span class="c-next">下一页</span><span class="c-last">尾页</span><span class="c-info"></span></div></div>';
         $(sl).appendTo(target);
         var css = generalStyle(options);
-        target.append(css);
+        $(target).append(css);
         var container = $('#' + options.id, target);
         options.rowsDiv = $('.c-rows', container);
         options.first = $('.c-foot .c-first', target).click(function () {
@@ -113,7 +113,7 @@
             options.pageNumber -= 1;
         }
         var offset = (options.rows.length - rowStart);
-        if (offset <= 0) {
+        if (options.totalCount > 0 && offset <= 0) {
             alert('已经为最后一页...');
             return;
         }
@@ -161,6 +161,8 @@
                 });
             }
         }
+        if (options.onCompleted)
+            options.onCompleted(options);
     }
 
     $.fn.table = function (options, param) {
@@ -188,10 +190,29 @@
         },
         set: function (jq, obj) {
             $.extend($.data(jq[0], 'table').options, obj);
+            //bindingClass(jq[0], $.data(jq[0], 'table').options);
             bindingData(jq[0]);
         },
         clear: function (jq) {
             clear(jq[0]);
+        },
+        first: function (jq) {
+            var options = $.data(jq[0], 'table').options;
+            options.pageNumber = 0;
+            bindingRows(options);
+        },
+        last: function (jq) {
+            var options = $.data(jq[0], 'table').options;
+            options.pageNumber = options.totalCount - 1;
+            bindingRows(options);
+        },
+        prev: function (jq) {
+            var options = $.data(jq[0], 'table').options;
+            bindingRows(options, true, false);
+        },
+        next: function (jq) {
+            var options = $.data(jq[0], 'table').options;
+            bindingRows(options, false, true);
         }
     };
 
@@ -201,11 +222,12 @@
                     */
         rows: [],
         border: true,
-        resetCols: false,
+        resetCols: true,
         onRowsContextMenu: function (e, row) { },
         onCellContextMenu: function (e, row, cell, colindex) { },
         onDblClickRow: function (row, index) { },
         onContextMenu: function (e) { },
+        onCompleted: function (opt) { },
         width: 'auto',
         height: 'auto',
         pageSize: 50,
