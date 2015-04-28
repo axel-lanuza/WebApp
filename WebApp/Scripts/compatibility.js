@@ -167,3 +167,23 @@ function dateToString(date) {
 function dateToFullString(date) {
     return date.getFullYear() + '年' + fill0(date.getMonth() + 1, 2) + '月' + fill0(date.getDate(), 2) + '日 ' + fill0(date.getHours(), 2) + ':' + fill0(date.getMinutes(), 2) + ':' + fill0(date.getSeconds(), 2);
 }
+
+function appendScript(src, func) {
+    var head = $('head')[0];
+    if (src != undefined) {
+        if ($('script[src="' + src + '"]').length != 0) {
+            if (func)
+                func();
+            return;
+        }
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = src;
+        head.appendChild(script);
+        script.onload = script.onreadystatechange = function () {
+            if (func)
+                func();
+        };
+    } else if (func)
+        func();
+}
