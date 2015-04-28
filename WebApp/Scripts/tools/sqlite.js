@@ -7,7 +7,7 @@
     var info = $('#i-info', center);
     var tablemain = $('.c-panel-main', center).table({
         border: true,
-        pageSize: 100,
+        pageSize: 50,
         onCompleted: function (opt) {
             info.text('当前为第' + (opt.totalCount > 0 ? (opt.pageNumber + 1) : 0) + '页，共' + opt.totalCount + '页');
         }
@@ -37,9 +37,15 @@
         tablemain.table('next');
         loadStatus(false);
     });
-    refreshTableList(tablemain, tablelist);
+    var size = $('#i-size', center).change(function () {
+        var pageSize = $(this).val();
+        loadStatus(true, '正在执行，请稍候...');
+        tablemain.table('updateSize', parseInt(pageSize));
+        loadStatus(false);
+    });
+    refreshTableList(tablemain, size, tablelist);
     var btnrefresh = $('.c-panel-bottom #refresh', left).click(function () {
-        refreshTableList(tablemain, tablelist);
+        refreshTableList(tablemain, size, tablelist);
     });
 
     var btnexecute = $('.c-panel-bottom #execute', center).click(function () {
@@ -54,12 +60,13 @@
             type = 'Select';
         else
             type = 'Edit';
-        loadData(type, tablemain, sql);
+        loadData(type, size, tablemain, sql);
     });
 });
 
-function loadData(type, parent, sql) {
+function loadData(type, size, parent, sql) {
     parent.table('clear');
+    $("option[value='50']", size).attr("selected", true);
     loadStatus(true, '正在执行，请稍候...');
     postWebService('/SQLiteDbService.asmx/' + type, { sql: sql }, function (data) {
         bindingData(parent, data, type);
@@ -67,7 +74,7 @@ function loadData(type, parent, sql) {
     });
 }
 
-function refreshTableList(detailpanel, tablelist) {
+function refreshTableList(detailpanel, size, tablelist) {
     $(tablelist).empty();
     loadStatus(true, '正在执行，请稍候...');
     postWebService('/SQLiteDbService.asmx/ShowTableList', {}, function (data) {
@@ -81,7 +88,7 @@ function refreshTableList(detailpanel, tablelist) {
                 $(item).dblclick(function () {
                     var name = $(item).text();
                     var sql = 'select * from ' + name;
-                    loadData('Select', detailpanel, sql);
+                    loadData('Select', size, detailpanel, sql);
                 });
             });
         }

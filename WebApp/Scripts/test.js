@@ -10,7 +10,7 @@
         ],
         //border: false,
         width: '100%',//600,
-        height:100,
+        height:200,
         pageSize: 10,
         onRowContextMenu: function (e, row) {
 

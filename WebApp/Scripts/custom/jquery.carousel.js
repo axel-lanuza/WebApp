@@ -1,6 +1,7 @@
 ﻿/*
 By Mingyue
 www.brightmoon.cn
+mingyue@brightmoon.cn
 */
 (function ($) {
     function generalStyle(options) {

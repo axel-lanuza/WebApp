@@ -1,4 +1,9 @@
-﻿(function ($) {
+﻿/*
+By Mingyue
+www.brightmoon.cn
+mingyue@brightmoon.cn
+*/
+(function ($) {
     function padLeft(str, total, ch) {
         if (!ch || ch.constructor !== String)
             ch = '*';

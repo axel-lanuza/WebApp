@@ -1,4 +1,9 @@
-﻿(function ($) {
+﻿/*
+By Mingyue
+www.brightmoon.cn
+mingyue@brightmoon.cn
+*/
+(function ($) {
     $.fn.progressDialog = function () { };
 
     $.fn.progressDialog.showDialog = function (text) {

@@ -1,4 +1,9 @@
-﻿(function ($) {
+﻿/*
+By Mingyue
+www.brightmoon.cn
+mingyue@brightmoon.cn
+*/
+(function ($) {
     String.prototype.format = function () {
         var args = arguments;
         return this.replace(/\{(\d+)\}/g,

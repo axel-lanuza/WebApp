@@ -1,4 +1,9 @@
-﻿(function ($) {
+﻿/*
+By Mingyue
+www.brightmoon.cn
+mingyue@brightmoon.cn
+*/
+(function ($) {
     function generalStyle(options) {
         var css = '<style type="text/css">';
         if (options.border)
@@ -12,6 +17,7 @@
         css += '.c-rows >tr:hover{background-color:#f2e6e3}';
         css += '.c-foot{height:16px;width:100%;margin:0;padding:0px;background-color:#b9c7e1;font-size:12px;}';
         css += '.c-prev,.c-next,.c-first,.c-last{margin:5px;cursor:pointer;}';
+        css += '.c-size{height:16px;width:50px;}';
         css += '</style>';
         return css;
     }
@@ -23,12 +29,22 @@
         sl += '<div class="c-panel">';
         sl += '<table><thead><tr class="c-head"></tr></thead><tbody class="c-rows"></tbody></table>';
         sl += '</div>';
-        sl += '<div class="c-foot"><span class="c-first">首页</span><span class="c-prev">上一页</span><span class="c-next">下一页</span><span class="c-last">尾页</span><span class="c-info"></span></div></div>';
+        sl += '<div class="c-foot"><select class="c-size"></select><span class="c-first">首页</span><span class="c-prev">上一页</span><span class="c-next">下一页</span><span class="c-last">尾页</span><span class="c-info"></span></div></div>';
         $(sl).appendTo(target);
         var css = generalStyle(options);
         $(target).append(css);
         var container = $('#' + options.id, target);
         options.rowsDiv = $('.c-rows', container);
+        options.size = $('.c-size', container).change(function () {
+            var pageSize = options.size.val();
+            options.pageSize = parseInt(pageSize);
+            options.pageNumber = 0;
+            options.totalCount = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
+            bindingRows(options);
+        });
+        for (var i = 1; i <= 3; i++)
+            options.size.append('<option value="' + (i * options.pageSize) + '">' + (i * options.pageSize) + '</option>');
+
         options.first = $('.c-foot .c-first', target).click(function () {
             options.pageNumber = 0;
             bindingRows(options);
@@ -191,7 +207,6 @@
         },
         set: function (jq, obj) {
             $.extend($.data(jq[0], 'table').options, obj);
-            //bindingClass(jq[0], $.data(jq[0], 'table').options);
             bindingData(jq[0]);
         },
         clear: function (jq) {
@@ -214,6 +229,13 @@
         next: function (jq) {
             var options = $.data(jq[0], 'table').options;
             bindingRows(options, false, true);
+        },
+        updateSize: function (jq, size) {
+            var options = $.data(jq[0], 'table').options;
+            options.pageNumber = 0;
+            options.pageSize = size;
+            options.totalCount = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
+            bindingRows(options);
         }
     };
 
