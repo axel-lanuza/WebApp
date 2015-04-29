@@ -1,5 +1,6 @@
 ﻿$(function () {
     var menu = $('#menu').contextmenu({
+        width: 80,
         onClick: function (item) {
 
         },
@@ -41,7 +42,6 @@
                 }
             }, {
                 id: 'map', text: '地图', img: 'Content/my/icons/Globe_16_16.png', click: function () {
-                    var row = tablemain.table('getSelectedRow');
                     alert('地图');
                 }
             }

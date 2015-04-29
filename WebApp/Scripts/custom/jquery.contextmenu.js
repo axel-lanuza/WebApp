@@ -6,12 +6,15 @@ mingyue@brightmoon.cn
 (function ($) {
     function generalStyle(options) {
         var css = '<style type="text/css">';
-        css += '.c-menu-panel{box-shadow: 2px 2px 2px #cccccc;height:' + (options.height === 'auto' ? '100%' : (options.height + 'px')) + ';width:' + (options.width === 'auto' ? '100%' : (options.width + 'px')) + ';background-color:#f7f3f3;position:absolute;border:1px solid #1d953f;border-radius:6px;}';
+        css += '.c-menu-panel{box-shadow:2px 2px 2px #cccccc;height:' + (options.height === 'auto' ? '100%' : (options.height + 'px')) + ';width:' + (options.width === 'auto' ? '100%' : (options.width + 'px')) + ';background-color:#f7f3f3;position:absolute;border:1px solid #1d953f;border-radius:6px;}';
         css += '.c-menu-hide{display:none;}';
-        css += '.c-menu-items{list-style-type:none;}';
+        css += '.c-menu-items{list-style-type:none;font-size:14px;}';
         css += '.c-menu-item{float:left;height:20px;width:100%;border-radius:6px;cursor:default;}';
-        css += '.c-menu-item:hover{background-color:#d6c2c2;border-style:dotted;border-width:1px;}';
-        css += '.c-menu-img{margin:2px;float:left;height:18px;width:18px;border-width:1px;}';
+        css += '.c-menu-item:hover{background-color:#d6c2c2;border-top-style:dotted;border-bottom-style:dotted;border-width:1px;}';
+        css += '.c-menu-text{cursor:default;}';
+        css += '.c-menu-affix{padding:1px;float:right;height:18px;width:18px;border-width:1px;}';
+        css += '.c-menu-children{margin:0px;display:none;box-shadow:2px 2px 2px #cccccc;height:' + (options.height === 'auto' ? '100%' : (options.height + 'px')) + ';width:' + (options.width === 'auto' ? '100%' : (options.width + 'px')) + ';background-color:#f7f3f3;position:absolute;border:1px solid #1d953f;border-radius:6px;}';
+        css += '.c-menu-img{margin:1px;float:left;height:18px;width:18px;border-width:1px;}';
         css += '</style>';
         return css;
     }
@@ -36,17 +39,38 @@ mingyue@brightmoon.cn
 
     function bindingItem(parent, options, item) {
         var id = item.id == undefined ? 'btn_' + item.text : item.id;
-        $('<li class="c-menu-item" id="' + id + '"><div class="c-menu-img"></div><div>' + item.text + '</div></li>').appendTo(parent);
-        var _item = $('#' + id, parent).click(function () {
-            options.menu.hide();
-            if (item.click)
-                item.click();
-            else if (options.onClick)
-                options.onClick(item);
-        });
+        if (!item.items)
+            $('<li class="c-menu-item" id="' + id + '"><div class="c-menu-img"></div><div class="c-menu-text">' + item.text + '</div></li>').appendTo(parent);
+        else {
+            $('<li class="c-menu-item" id="' + id + '"><div class="c-menu-img"></div><div class="c-menu-text">' + item.text + '<div class="c-menu-affix">></div></div><div class="c-menu-children"><ul class="c-menu-items"></ul></div></li>').appendTo(parent);
+        }
+        var _item = $('#' + id, parent);
         if (item.img) {
             var _img = $('.c-menu-img', _item);
             _img.css('background', 'url(' + item.img + ') no-repeat');
+        }
+        if (!item.items) {
+            _item.click(function () {
+                options.menu.hide();
+                if (item.click)
+                    item.click();
+                else if (options.onClick)
+                    options.onClick(item);
+            });
+        } else {
+            var children = $('.c-menu-children', _item);
+            _item.hover(function (e) {
+                children.css('left', $(this)[0].offsetLeft + $(this).width());
+                children.css('top', $(this)[0].offsetTop);
+                children.show();
+            }, function () {
+                children.hide();
+            });
+            var _items = $('.c-menu-items', children);
+            for (var i = 0; i < item.items.length; i++) {
+                bindingItem(_items, options, item.items[i]);
+            }
+            children.css('height', item.items.length * 20 + 2);
         }
     }
 
