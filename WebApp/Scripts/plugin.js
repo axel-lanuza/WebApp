@@ -5,7 +5,7 @@
     $('body').append($('<div class="back"></div>'));
     var back = $('.back');
     back.click(function () {
-        location = 'home.html';
+        location = 'default.html';
     });
     back.css('left', '10');
     back.css('top', height - 80);

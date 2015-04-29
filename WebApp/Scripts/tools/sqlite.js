@@ -23,8 +23,15 @@
             }
         }, {
             id: 'map', text: '地图', img: 'Content/my/icons/Globe_16_16.png', click: function () {
-                var row = tablemain.table('getSelectedRow');
-                alert('地图');
+                var options = tablemain.table('options');
+                if (options.columns.find(function (dat) {
+                    return dat.field === 'latitude';
+                }) && options.columns.find(function (dat) {
+                    return dat.field === 'longitude';
+                }))
+                    showMap(options);
+                else
+                    alert('缺少经纬度字段信息');
             }
         }]
     });
@@ -32,7 +39,7 @@
         border: true,
         pageSize: 50,
         onCompleted: function (opt) {
-            info.text('当前为第' + (opt.totalCount > 0 ? (opt.pageNumber + 1) : 0) + '页，共' + opt.totalCount + '页');
+            info.text('当前为第' + (opt.pageTotal > 0 ? (opt.pageNumber + 1) : 0) + '页，共' + opt.pageTotal + '页');
         },
         onRowContextMenu: function (e, row) {
             menu.contextmenu('show', e);
@@ -155,4 +162,9 @@ function loadStatus(execting, text) {
         $.showDialog(text);
     else
         $.hideDialog();
+}
+
+function showMap(opts) {
+    var win = $('<div></div>');
+
 }

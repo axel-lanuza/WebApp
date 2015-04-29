@@ -40,7 +40,7 @@ mingyue@brightmoon.cn
             var pageSize = options.size.val();
             options.pageSize = parseInt(pageSize);
             options.pageNumber = 0;
-            options.totalCount = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
+            options.pageTotal = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
             bindingRows(options);
         });
         for (var i = 1; i <= 3; i++)
@@ -51,7 +51,7 @@ mingyue@brightmoon.cn
             bindingRows(options);
         });
         options.last = $('.c-foot .c-last', target).click(function () {
-            options.pageNumber = options.totalCount - 1;
+            options.pageNumber = options.pageTotal - 1;
             bindingRows(options);
         });
         options.prev = $('.c-foot .c-prev', target).click(function () {
@@ -116,14 +116,14 @@ mingyue@brightmoon.cn
             options.headerDiv.append(cls);
         }
         options.info.text('');
-        options.totalCount = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
+        options.pageTotal = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
         options.pageNumber = 0;
         bindingRows(options);
     }
 
     function bindingRows(options, prev, next) {
         var rowStart = options.pageNumber * options.pageSize;
-        if (next && options.pageNumber < options.totalCount) {
+        if (next && options.pageNumber < options.pageTotal) {
             rowStart += options.pageSize;
             options.pageNumber += 1;
         } else if (prev && options.pageNumber > 0) {
@@ -131,13 +131,13 @@ mingyue@brightmoon.cn
             options.pageNumber -= 1;
         }
         var offset = (options.rows.length - rowStart);
-        if (options.totalCount > 0 && offset <= 0) {
+        if (options.pageTotal > 0 && offset <= 0) {
             alert('已经为最后一页...');
             return;
         }
         if (options.rowsDiv)
             options.rowsDiv.empty();
-        options.info.text('当前为第' + (options.pageNumber + 1) + '页，共' + options.totalCount + '页');
+        options.info.text('当前为第' + (options.pageNumber + 1) + '页，共' + options.pageTotal + '页');
         var len = offset > options.pageSize ? options.pageSize : offset;
         for (var ri = 0; ri < len; ri++) {
             var row = options.rows[rowStart + ri];
@@ -228,7 +228,7 @@ mingyue@brightmoon.cn
         },
         last: function (jq) {
             var options = $.data(jq[0], 'table').options;
-            options.pageNumber = options.totalCount - 1;
+            options.pageNumber = options.pageTotal - 1;
             bindingRows(options);
         },
         prev: function (jq) {
@@ -243,7 +243,7 @@ mingyue@brightmoon.cn
             var options = $.data(jq[0], 'table').options;
             options.pageNumber = 0;
             options.pageSize = size;
-            options.totalCount = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
+            options.pageTotal = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
             bindingRows(options);
         },
         getSelectedRow: function (jq) {

@@ -141,6 +141,7 @@
     <Content Include="Scripts\bootstrapDemo\bootstrapdemo.js" />
     <Content Include="Scripts\carousel\carousel.js" />
     <Content Include="Scripts\custom\jquery.carousel.js" />
+    <Content Include="Scripts\tools\maptrail.js" />
     <Content Include="Scripts\custom\jquery.table.js" />
     <Content Include="Scripts\custom\jquery.progress.js" />
     <Content Include="Scripts\default.js" />
