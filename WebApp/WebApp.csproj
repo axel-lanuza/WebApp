@@ -1224,6 +1224,7 @@
     <Content Include="Scripts\bootstrap3.3.4\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Scripts\bootstrap3.3.4\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\Data\bookmarks\bookmarks-2015-04-14.json" />
+    <Content Include="Scripts\custom\jquery.contextmenu.js" />
     <None Include="Scripts\office\1.1\office-vsdoc.js" />
     <Content Include="Scripts\office\1.1\office.debug.js" />
     <Content Include="Scripts\office\1.1\office.js" />

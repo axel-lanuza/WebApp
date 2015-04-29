@@ -5,11 +5,37 @@
 
     var leftmain = $('.c-panel-main', left);
     var info = $('#i-info', center);
+    var menu = $('#menu').contextmenu({
+        width: 80,
+        beforeShow: function (opts) {
+
+        },
+        onClick: function (item) {
+
+        },
+        items: [{
+            id: 'export', text: '导出', img: 'Content/my/icons/ExportToFile_16_16.png', click: function () {
+                alert('导出');
+            }
+        }, {
+            id: 'chart', text: '图表', img: 'Content/my/icons/PieChart_16_16.png', click: function () {
+                alert('图表');
+            }
+        }, {
+            id: 'map', text: '地图', img: 'Content/my/icons/Globe_16_16.png', click: function () {
+                var row = tablemain.table('getSelectedRow');
+                alert('地图');
+            }
+        }]
+    });
     var tablemain = $('.c-panel-main', center).table({
         border: true,
         pageSize: 50,
         onCompleted: function (opt) {
             info.text('当前为第' + (opt.totalCount > 0 ? (opt.pageNumber + 1) : 0) + '页，共' + opt.totalCount + '页');
+        },
+        onRowContextMenu: function (e, row) {
+            menu.contextmenu('show', e);
         }
     });
     var bottommain = $('.c-panel-main', bottom);

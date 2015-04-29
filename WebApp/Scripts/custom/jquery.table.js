@@ -14,7 +14,8 @@ mingyue@brightmoon.cn
         css += '.c-panel{overflow:auto;width:100%;height:100%;}';
         css += '.c-head{background-color:#93c9f2;}';
         css += '.c-rows{}';
-        css += '.c-rows >tr:hover{background-color:#f2e6e3}';
+        css += '.c-row-selected{background-color:#f7efed}';
+        css += '.c-rows >tr:hover{background-color:#f7efed}';
         css += '.c-foot{height:16px;width:100%;margin:0;padding:0px;background-color:#b9c7e1;font-size:12px;}';
         css += '.c-prev,.c-next,.c-first,.c-last{margin:5px;cursor:pointer;}';
         css += '.c-size{height:16px;width:50px;}';
@@ -140,7 +141,8 @@ mingyue@brightmoon.cn
         var len = offset > options.pageSize ? options.pageSize : offset;
         for (var ri = 0; ri < len; ri++) {
             var row = options.rows[rowStart + ri];
-            var rl = '<tr id="r-' + (rowStart + ri) + '">';
+            var id = 'r-' + (rowStart + ri);
+            var rl = '<tr id="' + id + '">';
             for (var ci = 0; ci < options.columns.length; ci++) {
                 var col = options.columns[ci];
                 var val;
@@ -159,7 +161,14 @@ mingyue@brightmoon.cn
                 rl += '>' + val + '</td>';
             }
             rl += '</tr>';
-            var _row = $(rl).appendTo(options.rowsDiv);
+            $(rl).appendTo(options.rowsDiv);
+            var _row = $('#' + id, options.rowsDiv).click(function () {
+                if (options.selectedRow)
+                    options.selectedRow.removeClass('c-row-selected');
+                $(this).addClass('c-row-selected');
+                options.selectedRow = $(this);
+                options.selectedIndex = parseInt(options.selectedRow[0].id.substr(2));
+            });
             if (options.onDblClickRow) {
                 $(_row).bind("dblclick", function (e) {
                     options.onDblClickRow(e, row);
@@ -236,6 +245,20 @@ mingyue@brightmoon.cn
             options.pageSize = size;
             options.totalCount = (options.rows.length % options.pageSize) == 0 ? (options.rows.length / options.pageSize) : (parseInt(options.rows.length / options.pageSize) + 1);
             bindingRows(options);
+        },
+        getSelectedRow: function (jq) {
+            var options = $.data(jq[0], 'table').options;
+            var _row = options.rows[options.selectedIndex];
+            var _cols = options.columns;
+            var row = {};
+            for (var i = 0; i < _cols.length; i++) {
+                row[_cols[i].field] = _row[i];
+            }
+            return row;
+        },
+        getSelectedIndex: function (jq) {
+            var options = $.data(jq[0], 'table').options;
+            return options.selectedIndex;
         }
     };
 
